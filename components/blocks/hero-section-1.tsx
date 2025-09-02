@@ -9,6 +9,7 @@ import { HeroVideoDialog } from '@/components/ui/hero-video-dialog'
 import { Particles } from '@/components/ui/particles'
 import { VideoMovingBorder } from '@/components/ui/video-border'
 import { AnimatedTooltipPreview } from '@/components/ui/animated-tooltip-demo'
+import { TestimonialCarouselDemo } from '@/components/ui/testimonial-demo'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -178,6 +179,14 @@ export function HeroSection() {
 
                     </div>
                 </section>
+
+                {/* Testimonials Section */}
+                <section className="bg-background/50 py-16 md:py-24">
+                    <div className="container mx-auto px-6">
+                        <TestimonialCarouselDemo />
+                    </div>
+                </section>
+
                 <section className="bg-background pb-16 pt-16 md:pb-32">
                     <div className="group relative m-auto max-w-5xl px-6">
                         <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
