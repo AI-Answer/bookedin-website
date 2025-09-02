@@ -11,6 +11,8 @@ import { VideoMovingBorder } from '@/components/ui/video-border'
 import { AnimatedTooltipPreview } from '@/components/ui/animated-tooltip-demo'
 import { TestimonialCarouselDemo } from '@/components/ui/testimonial-demo'
 import BeforeAfterSection from '@/components/blocks/BeforeAfterSection'
+import WhoIsThisForSection from '@/components/blocks/WhoIsThisForSection'
+import PricingSection from '@/components/blocks/PricingSection'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -189,6 +191,10 @@ export function HeroSection() {
                 </section>
 
                 <BeforeAfterSection />
+
+                <WhoIsThisForSection />
+
+                <PricingSection />
             </main>
         </>
     )
