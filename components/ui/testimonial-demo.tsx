@@ -23,19 +23,24 @@ const TESTIMONIAL_DATA = [
 
 export function TestimonialCarouselDemo() {
   return (
-    <div className="w-full py-16">
+    <div className="w-full py-12">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          What Our Clients Say
+          Don't Take Our Word For It
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           See how BookedIn has transformed businesses and helped them convert more leads into meetings
         </p>
       </div>
-      <TestimonialCarousel 
+      <TestimonialCarousel
         testimonials={TESTIMONIAL_DATA}
         className="max-w-2xl mx-auto"
       />
+      <div className="text-center mt-12">
+        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors">
+          Get Started
+        </button>
+      </div>
     </div>
   )
 }
