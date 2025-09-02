@@ -9,10 +9,12 @@ import { HeroVideoDialog } from '@/components/ui/hero-video-dialog'
 import { Particles } from '@/components/ui/particles'
 import { VideoMovingBorder } from '@/components/ui/video-border'
 import { AnimatedTooltipPreview } from '@/components/ui/animated-tooltip-demo'
+import { StarRating } from '@/components/ui/star-rating'
 import { TestimonialCarouselDemo } from '@/components/ui/testimonial-demo'
 import BeforeAfterSection from '@/components/blocks/BeforeAfterSection'
 import WhoIsThisForSection from '@/components/blocks/WhoIsThisForSection'
 import PricingSection from '@/components/blocks/PricingSection'
+import VideoTestimonialsSection from '@/components/blocks/VideoTestimonialsSection'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -42,7 +44,7 @@ export function HeroSection() {
             <main className="overflow-hidden relative">
                 <Particles
                     className="absolute inset-0 z-0"
-                    quantity={100}
+                    quantity={200}
                     ease={80}
                     color="#305AE3"
                     refresh
@@ -94,9 +96,16 @@ export function HeroSection() {
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <AnimatedGroup variants={transitionVariants}>
-                                    {/* Animated Tooltip Eyebrow */}
-                                    <div className="mb-6">
-                                        <AnimatedTooltipPreview />
+                                    {/* Animated Tooltip Eyebrow with Stars */}
+                                    <div className="mb-6 flex flex-col items-center justify-center gap-3">
+                                        <StarRating
+                                            rating={5}
+                                            size={20}
+                                            className="justify-center"
+                                        />
+                                        <div className="scale-75 sm:scale-90">
+                                            <AnimatedTooltipPreview />
+                                        </div>
                                     </div>
 
                                     <h1
@@ -184,8 +193,15 @@ export function HeroSection() {
                 </section>
 
                 {/* Testimonials Section */}
-                <section className="bg-background/50 py-12 md:py-16">
-                    <div className="container mx-auto px-6">
+                <section className="relative bg-background/50 py-12 md:py-16 overflow-hidden">
+                    <Particles
+                        className="absolute inset-0 z-0"
+                        quantity={150}
+                        ease={80}
+                        color="#305AE3"
+                        refresh
+                    />
+                    <div className="relative z-10 container mx-auto px-6">
                         <TestimonialCarouselDemo />
                     </div>
                 </section>
@@ -193,6 +209,8 @@ export function HeroSection() {
                 <BeforeAfterSection />
 
                 <WhoIsThisForSection />
+
+                <VideoTestimonialsSection />
 
                 <PricingSection />
             </main>

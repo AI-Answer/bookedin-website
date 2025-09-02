@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pricing } from './pricing';
+import { Particles } from '@/components/ui/particles';
 
 const PricingSection: React.FC = () => {
   const pricingPlans = [
@@ -57,8 +58,15 @@ const PricingSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="relative py-12 md:py-16 bg-white overflow-hidden">
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={150}
+        ease={80}
+        color="#305AE3"
+        refresh
+      />
+      <div className="relative z-10 container mx-auto px-6">
         <Pricing 
           plans={pricingPlans}
           title="Choose Your Plan"

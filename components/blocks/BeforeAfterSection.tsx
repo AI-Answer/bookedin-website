@@ -1,9 +1,17 @@
 import React from 'react';
+import { Particles } from '@/components/ui/particles';
 
 const BeforeAfterSection: React.FC = () => {
   return (
-    <section className="py-12 md:py-16 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="relative py-12 md:py-16 bg-white overflow-hidden">
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={150}
+        ease={80}
+        color="#305AE3"
+        refresh
+      />
+      <div className="relative z-10 container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
