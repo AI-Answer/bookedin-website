@@ -9,27 +9,15 @@ const TESTIMONIAL_DATA = [
   },
   {
     id: 2,
-    name: "Adam James",
-    avatar: "/adam-pic.png",
-    description: "I got a little emotional because if I had this before I would have been way ahead"
-  },
-  {
-    id: 3,
     name: "Andrew Reveill",
     avatar: "/andrew-pic.png",
     description: "Best Investment we've made so far in AI"
   },
   {
-    id: 4,
-    name: "Jamie Paredes",
-    avatar: "/jamie-pic.png",
-    description: "BookedIn has transformed how we handle lead conversion. The automation is seamless and the results speak for themselves."
-  },
-  {
-    id: 5,
-    name: "Liam Ottley",
-    avatar: "/liam-pic.png",
-    description: "The AI-powered scheduling has saved us countless hours and dramatically improved our client satisfaction rates."
+    id: 3,
+    name: "Adam James",
+    avatar: "/adam-pic.png",
+    description: "I got a little emotional because if I had this before I would have been way ahead"
   }
 ]
 
