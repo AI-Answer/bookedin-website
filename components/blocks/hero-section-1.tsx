@@ -8,6 +8,7 @@ import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroVideoDialog } from '@/components/ui/hero-video-dialog'
 import { Particles } from '@/components/ui/particles'
 import { VideoMovingBorder } from '@/components/ui/video-border'
+import { AnimatedTooltipPreview } from '@/components/ui/animated-tooltip-demo'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -89,6 +90,11 @@ export function HeroSection() {
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <AnimatedGroup variants={transitionVariants}>
+                                    {/* Animated Tooltip Eyebrow */}
+                                    <div className="mb-6">
+                                        <AnimatedTooltipPreview />
+                                    </div>
+
                                     <h1
                                         className="mt-4 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-8 xl:text-[5.25rem]">
                                         Convert leads into meetings for your clients
@@ -116,22 +122,16 @@ export function HeroSection() {
                                             aria-hidden
                                             className="bg-gradient-to-b to-background absolute inset-0 z-0 from-transparent from-35%"
                                         />
-                                        <div className="relative mx-auto max-w-4xl z-20">
-                                            <VideoMovingBorder
-                                                duration={4000}
-                                                borderRadius="1.5rem"
-                                                className="shadow-lg shadow-zinc-950/15"
-                                            >
-                                                <div className="aspect-video relative rounded-2xl overflow-hidden p-4">
-                                                    <iframe
-                                                        src="https://fast.wistia.net/embed/iframe/vuxx1meqz9?seo=true&videoFoam=false"
-                                                        title="BookedIn Demo Video"
-                                                        allow="autoplay; fullscreen"
-                                                        allowFullScreen
-                                                        className="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] rounded-xl"
-                                                    ></iframe>
-                                                </div>
-                                            </VideoMovingBorder>
+                                        <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-4xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1 z-20">
+                                            <div className="aspect-video relative rounded-2xl z-30">
+                                                <iframe
+                                                    src="https://fast.wistia.net/embed/iframe/vuxx1meqz9?seo=true&videoFoam=false"
+                                                    title="BookedIn Demo Video"
+                                                    allow="autoplay; fullscreen"
+                                                    allowFullScreen
+                                                    className="absolute inset-0 w-full h-full rounded-2xl"
+                                                ></iframe>
+                                            </div>
                                         </div>
                                     </div>
                                 </AnimatedGroup>
