@@ -40,6 +40,22 @@ const TestimonialCarousel = React.forwardRef<
       }
     }
 
+    const goToPrevious = () => {
+      setExitX(-100)
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+        setExitX(0)
+      }, 200)
+    }
+
+    const goToNext = () => {
+      setExitX(100)
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+        setExitX(0)
+      }, 200)
+    }
+
     return (
       <div
         ref={ref}
@@ -95,12 +111,20 @@ const TestimonialCarousel = React.forwardRef<
               >
                 {showArrows && isCurrentCard && (
                   <div className="absolute inset-x-0 top-2 flex justify-between px-4">
-                    <span className="text-2xl select-none cursor-pointer text-gray-300 hover:text-gray-400 dark:text-muted-foreground dark:hover:text-primary">
+                    <button
+                      onClick={goToPrevious}
+                      className="text-2xl select-none cursor-pointer text-gray-300 hover:text-gray-400 dark:text-muted-foreground dark:hover:text-primary transition-colors duration-200 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                      aria-label="Previous testimonial"
+                    >
                       &larr;
-                    </span>
-                    <span className="text-2xl select-none cursor-pointer text-gray-300 hover:text-gray-400 dark:text-muted-foreground dark:hover:text-primary">
+                    </button>
+                    <button
+                      onClick={goToNext}
+                      className="text-2xl select-none cursor-pointer text-gray-300 hover:text-gray-400 dark:text-muted-foreground dark:hover:text-primary transition-colors duration-200 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                      aria-label="Next testimonial"
+                    >
                       &rarr;
-                    </span>
+                    </button>
                   </div>
                 )}
 
@@ -123,14 +147,16 @@ const TestimonialCarousel = React.forwardRef<
           {showDots && (
             <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2">
               {testimonials.map((_, index) => (
-                <div
+                <button
                   key={index}
+                  onClick={() => setCurrentIndex(index)}
                   className={cn(
-                    "w-2 h-2 rounded-full transition-colors",
+                    "w-2 h-2 rounded-full transition-colors cursor-pointer hover:scale-125 transition-transform duration-200",
                     index === currentIndex
                       ? "bg-blue-500 dark:bg-primary"
-                      : "bg-gray-300 dark:bg-muted-foreground/30",
+                      : "bg-gray-300 dark:bg-muted-foreground/30 hover:bg-gray-400 dark:hover:bg-muted-foreground/50",
                   )}
+                  aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>
