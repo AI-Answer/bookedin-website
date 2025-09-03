@@ -15,6 +15,7 @@ import BeforeAfterSection from '@/components/blocks/BeforeAfterSection'
 import WhoIsThisForSection from '@/components/blocks/WhoIsThisForSection'
 import PricingSection from '@/components/blocks/PricingSection'
 import VideoTestimonialsSection from '@/components/blocks/VideoTestimonialsSection'
+import BookingSection from '@/components/blocks/BookingSection'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -169,7 +170,7 @@ export function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-5 text-base">
-                                            <Link href="#link">
+                                            <Link href="http://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer">
                                                 <span className="text-nowrap">Get Started</span>
                                             </Link>
                                         </Button>
@@ -180,8 +181,8 @@ export function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="h-10.5 rounded-xl px-5">
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Request a demo</span>
+                                        <Link href="#demo">
+                                            <span className="text-nowrap">Schedule a Demo</span>
                                         </Link>
                                     </Button>
                                 </AnimatedGroup>
@@ -206,23 +207,35 @@ export function HeroSection() {
                     </div>
                 </section>
 
-                <BeforeAfterSection />
+                <div id="features">
+                    <BeforeAfterSection />
+                </div>
 
-                <WhoIsThisForSection />
+                <div id="solution">
+                    <WhoIsThisForSection />
+                </div>
 
-                <VideoTestimonialsSection />
+                <div id="testimonials">
+                    <VideoTestimonialsSection />
+                </div>
 
-                <PricingSection />
+                <div id="demo">
+                    <BookingSection />
+                </div>
+
+                <div id="pricing">
+                    <PricingSection />
+                </div>
             </main>
         </>
     )
 }
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
+    { name: 'How It Works', href: '#features' },
+    { name: 'Who This Is For', href: '#solution' },
+    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Pricing', href: '#pricing' },
 ]
 
 const HeroHeader = () => {
@@ -294,7 +307,7 @@ const HeroHeader = () => {
                                     variant="outline"
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
+                                    <Link href="http://dashboard.bookedin.ai/login" target="_blank" rel="noopener noreferrer">
                                         <span>Login</span>
                                     </Link>
                                 </Button>
@@ -302,7 +315,7 @@ const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
+                                    <Link href="http://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer">
                                         <span>Sign Up</span>
                                     </Link>
                                 </Button>
@@ -310,7 +323,7 @@ const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
+                                    <Link href="http://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer">
                                         <span>Get Started</span>
                                     </Link>
                                 </Button>

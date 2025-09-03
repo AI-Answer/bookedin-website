@@ -18,7 +18,7 @@ const PricingSection: React.FC = () => {
       ],
       description: "Perfect for getting started with AI automation",
       buttonText: "Get Started",
-      href: "#",
+      href: "http://dashboard.bookedin.ai/register",
       isPopular: false
     },
     {
@@ -34,7 +34,7 @@ const PricingSection: React.FC = () => {
       ],
       description: "Ideal for agencies wanting to resell AI services",
       buttonText: "Get Started",
-      href: "#",
+      href: "http://dashboard.bookedin.ai/register",
       isPopular: true
     },
     {
@@ -52,7 +52,7 @@ const PricingSection: React.FC = () => {
       ],
       description: "Fully managed solution tailored to your needs",
       buttonText: "Contact Sales",
-      href: "#",
+      href: "#demo",
       isPopular: false
     }
   ];
