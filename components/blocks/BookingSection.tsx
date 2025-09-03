@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 import { Particles } from '@/components/ui/particles';
 
 const BookingSection: React.FC = () => {
@@ -41,9 +42,8 @@ const BookingSection: React.FC = () => {
                   <iframe
                     src="https://app.converti.ai/widget/booking/U5bzTPMI2Fr08d0FXePj"
                     className="w-full border-none h-[700px] md:h-[800px] lg:h-[850px] min-h-[700px]"
-                    scrolling="yes"
-                    id="5tBRfXC6BBxlQyIdDzPF_1756855009188"
                     title="Book a Demo with BookedIn.ai"
+                    style={{ overflow: 'auto' }}
                   />
                 </div>
               </div>
@@ -84,12 +84,11 @@ const BookingSection: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Embed Script */}
-      <script 
-        src="https://app.converti.ai/js/form_embed.js" 
-        type="text/javascript"
-        async
+      <Script
+        src="https://app.converti.ai/js/form_embed.js"
+        strategy="lazyOnload"
       />
     </section>
   );

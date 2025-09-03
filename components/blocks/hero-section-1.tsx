@@ -181,7 +181,7 @@ export function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="h-10.5 rounded-xl px-5">
-                                        <Link href="#demo">
+                                        <Link href="#demo" prefetch={false}>
                                             <span className="text-nowrap">Schedule a Demo</span>
                                         </Link>
                                     </Button>
@@ -279,6 +279,7 @@ const HeroHeader = () => {
                                     <li key={index}>
                                         <Link
                                             href={item.href}
+                                            prefetch={false}
                                             className="text-foreground hover:text-primary block duration-150">
                                             <span>{item.name}</span>
                                         </Link>
@@ -294,6 +295,8 @@ const HeroHeader = () => {
                                         <li key={index}>
                                             <Link
                                                 href={item.href}
+                                                prefetch={false}
+                                                onClick={() => setMenuState(false)}
                                                 className="text-foreground hover:text-primary block duration-150">
                                                 <span>{item.name}</span>
                                             </Link>
@@ -306,14 +309,14 @@ const HeroHeader = () => {
                                     asChild
                                     variant="outline"
                                     size="sm">
-                                    <Link href="#demo">
+                                    <Link href="#demo" prefetch={false} onClick={() => setMenuState(false)}>
                                         <span>Schedule a Demo</span>
                                     </Link>
                                 </Button>
                                 <Button
                                     asChild
                                     size="sm">
-                                    <Link href="http://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer">
+                                    <Link href="http://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setMenuState(false)}>
                                         <span>Get Started</span>
                                     </Link>
                                 </Button>
