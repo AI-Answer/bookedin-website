@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroVideoDialog } from '@/components/ui/hero-video-dialog'
 import { Particles } from '@/components/ui/particles'
-import { VideoMovingBorder } from '@/components/ui/video-border'
+
 import { AnimatedTooltipPreview } from '@/components/ui/animated-tooltip-demo'
 import { StarRating } from '@/components/ui/star-rating'
 import { TestimonialCarouselDemo } from '@/components/ui/testimonial-demo'
@@ -30,7 +30,7 @@ const transitionVariants = {
             filter: 'blur(0px)',
             y: 0,
             transition: {
-                type: 'spring',
+                type: 'spring' as const,
                 bounce: 0.3,
                 duration: 1.5,
             },
@@ -77,7 +77,7 @@ export function HeroSection() {
                                         opacity: 1,
                                         y: 0,
                                         transition: {
-                                            type: 'spring',
+                                            type: 'spring' as const,
                                             bounce: 0.3,
                                             duration: 2,
                                         },
