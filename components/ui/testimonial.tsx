@@ -60,12 +60,12 @@ const TestimonialCarousel = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          "h-[28rem] w-full flex items-center justify-center",
+          "h-[28rem] sm:h-[32rem] w-full flex items-center justify-center px-4",
           className
         )}
         {...props}
       >
-        <div className="relative w-[28rem] h-96">
+        <div className="relative w-full max-w-[20rem] sm:max-w-[28rem] h-96 sm:h-[28rem]">
           {testimonials.map((testimonial, index) => {
             const isCurrentCard = index === currentIndex
             const isPrevCard =
@@ -128,18 +128,26 @@ const TestimonialCarousel = React.forwardRef<
                   </div>
                 )}
 
-                <div className="p-12 flex flex-col items-center gap-8">
+                <div className="p-6 sm:p-12 flex flex-col items-center gap-4 sm:gap-8 h-full justify-center">
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-20 h-20 rounded-full object-cover"
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover flex-shrink-0"
                   />
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-foreground">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-foreground text-center">
                     {testimonial.name}
                   </h3>
-                  <p className="text-center text-base text-gray-600 dark:text-muted-foreground leading-relaxed mx-4">
+                  <p className="text-center text-sm sm:text-base text-gray-600 dark:text-muted-foreground leading-relaxed px-2 sm:px-4 flex-1 flex items-center">
                     {testimonial.description}
                   </p>
+                  <a
+                    href="http://dashboard.bookedin.ai/register"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg transition-colors inline-block text-sm sm:text-base flex-shrink-0"
+                  >
+                    Get Started
+                  </a>
                 </div>
               </motion.div>
             )
