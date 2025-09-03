@@ -60,12 +60,12 @@ const TestimonialCarousel = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          "h-96 w-full flex items-center justify-center",
+          "h-[28rem] w-full flex items-center justify-center",
           className
         )}
         {...props}
       >
-        <div className="relative w-96 h-80">
+        <div className="relative w-[28rem] h-96">
           {testimonials.map((testimonial, index) => {
             const isCurrentCard = index === currentIndex
             const isPrevCard =
@@ -128,7 +128,7 @@ const TestimonialCarousel = React.forwardRef<
                   </div>
                 )}
 
-                <div className="p-8 flex flex-col items-center gap-6">
+                <div className="p-12 flex flex-col items-center gap-8">
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
@@ -137,7 +137,7 @@ const TestimonialCarousel = React.forwardRef<
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-foreground">
                     {testimonial.name}
                   </h3>
-                  <p className="text-center text-base text-gray-600 dark:text-muted-foreground leading-relaxed">
+                  <p className="text-center text-base text-gray-600 dark:text-muted-foreground leading-relaxed mx-4">
                     {testimonial.description}
                   </p>
                 </div>

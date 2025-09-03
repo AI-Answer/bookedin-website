@@ -7,7 +7,7 @@ const PricingSection: React.FC = () => {
     {
       name: "Pro",
       price: "297",
-      yearlyPrice: "2970", // 10 months pricing for yearly
+      yearlyPrice: "2970", // Annual total: $297 × 10 months = $2970 (20% savings)
       period: "month",
       features: [
         "Full AI Platform Access",
@@ -24,7 +24,7 @@ const PricingSection: React.FC = () => {
     {
       name: "Agency",
       price: "497",
-      yearlyPrice: "4970", // 10 months pricing for yearly
+      yearlyPrice: "4970", // Annual total: $497 × 10 months = $4970 (20% savings)
       period: "month",
       features: [
         "Everything in Pro",

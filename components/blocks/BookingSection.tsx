@@ -40,11 +40,10 @@ const BookingSection: React.FC = () => {
                 <div className="w-full rounded-lg overflow-hidden bg-gray-50">
                   <iframe
                     src="https://app.converti.ai/widget/booking/U5bzTPMI2Fr08d0FXePj"
-                    className="w-full border-none h-[700px] md:h-[800px] lg:h-[850px]"
+                    className="w-full border-none h-[700px] md:h-[800px] lg:h-[850px] min-h-[700px]"
                     scrolling="yes"
                     id="5tBRfXC6BBxlQyIdDzPF_1756855009188"
                     title="Book a Demo with BookedIn.ai"
-                    style={{ minHeight: '700px' }}
                   />
                 </div>
               </div>

@@ -153,7 +153,7 @@ export function Pricing({
                     <span className="text-5xl font-bold tracking-tight text-foreground">
                       <NumberFlow
                         value={
-                          isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)
+                          isMonthly ? Number(plan.price) : Math.round(Number(plan.yearlyPrice) / 12 * 100) / 100
                         }
                         format={{
                           style: "currency",
