@@ -50,7 +50,7 @@ const VideoTestimonialsSection: React.FC = () => {
       testimonial: "He literally gives you the plan on what to do - it's not that hard. I got a little emotional because if I had that information I would have been way ahead.",
       rating: 5,
       image: "/api/placeholder/48/48",
-      videoUrl: "https://bookedin.ai/videos/adam.mp4"
+      videoUrl: "https://www.youtube.com/embed/rq9FNr2O8_I"
     },
     {
       name: "Jamie",
@@ -58,7 +58,7 @@ const VideoTestimonialsSection: React.FC = () => {
       testimonial: "Helped us develop agents in days. For someone like myself who is not very technical they go out of their way to explain it in a way that helps me understand.",
       rating: 5,
       image: "/api/placeholder/48/48",
-      videoUrl: "https://bookedin.ai/videos/jamie.mp4"
+      videoUrl: "https://www.youtube.com/embed/MpXSq9yf10M"
     },
     {
       name: "Andrew",
