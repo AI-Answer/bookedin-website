@@ -170,7 +170,7 @@ export function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-5 text-base">
-                                            <Link href="http://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer">
+                                            <Link href="https://www.skool.com/bookedin" target="_blank" rel="noopener noreferrer">
                                                 <span className="text-nowrap">Get Started</span>
                                             </Link>
                                         </Button>
@@ -316,7 +316,7 @@ const HeroHeader = () => {
                                 <Button
                                     asChild
                                     size="sm">
-                                    <Link href="http://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setMenuState(false)}>
+                                    <Link href="https://www.skool.com/bookedin" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setMenuState(false)}>
                                         <span>Get Started</span>
                                     </Link>
                                 </Button>

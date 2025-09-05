@@ -103,7 +103,7 @@ const BeforeAfterSection: React.FC = () => {
         {/* Centered Get Started Button */}
         <div className="text-center mt-12">
           <a
-            href="http://dashboard.bookedin.ai/register"
+            href="https://www.skool.com/bookedin"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors inline-block"

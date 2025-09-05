@@ -141,7 +141,7 @@ const TestimonialCarousel = React.forwardRef<
                     {testimonial.description}
                   </p>
                   <a
-                    href="http://dashboard.bookedin.ai/register"
+                    href="https://www.skool.com/bookedin"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg transition-colors inline-block text-sm sm:text-base flex-shrink-0"
