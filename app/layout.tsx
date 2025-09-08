@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -71,6 +72,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        {/* Senja testimonials widget */}
+        <Script
+          src="https://widget.senja.io/widget/5d2cb7d6-db9e-4868-9bae-5a1662ec1c8f/platform.js"
+          strategy="afterInteractive"
+          async
+        />
       </body>
     </html>
   );
