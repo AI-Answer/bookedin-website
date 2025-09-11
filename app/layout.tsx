@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import GlobalClickTracker from "@/components/analytics/GlobalClickTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,6 +72,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <GlobalClickTracker />
         {children}
         {/* VisitorTracking tracer init (define before script loads) */}
         <Script id="visitor-tracer-init" strategy="beforeInteractive">
