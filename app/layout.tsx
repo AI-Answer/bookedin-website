@@ -72,6 +72,25 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        {/* VisitorTracking tracer init (define before script loads) */}
+        <Script id="visitor-tracer-init" strategy="beforeInteractive">
+          {`
+            function init_tracer() {
+              var tracer = new Tracer({
+                websiteId : "d85f88d2-8bc2-4a3a-8940-7d7cdde14eab",
+                async : true,
+                debug : false
+              });
+            }
+          `}
+        </Script>
+        {/* VisitorTracking tracer loader */}
+        <Script
+          id="visitor-tracer-src"
+          src="https://app.visitortracking.com/assets/js/tracer.js"
+          strategy="afterInteractive"
+          async
+        />
         {/* Senja testimonials widget */}
         <Script
           src="https://widget.senja.io/widget/5d2cb7d6-db9e-4868-9bae-5a1662ec1c8f/platform.js"
