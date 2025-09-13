@@ -47,7 +47,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://us.i.posthog.com" />
-        <link rel="preconnect" href="https://widget.senja.io" />
+
 
 
         {/* Google Analytics */}
@@ -99,12 +99,7 @@ export default function RootLayout({
           strategy="lazyOnload"
           async
         />
-        {/* Senja testimonials widget */}
-        <Script
-          src="https://widget.senja.io/widget/5d2cb7d6-db9e-4868-9bae-5a1662ec1c8f/platform.js"
-          strategy="lazyOnload"
-          async
-        />
+
 
         {/* Meta Pixel */}
         <Script id="meta-pixel" strategy="lazyOnload">
