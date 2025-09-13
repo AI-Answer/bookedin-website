@@ -43,6 +43,7 @@ const BookingSection: React.FC = () => {
                     src="https://app.converti.ai/widget/booking/U5bzTPMI2Fr08d0FXePj"
                     className="w-full border-none h-[700px] md:h-[800px] lg:h-[850px] min-h-[700px]"
                     title="Book a Demo with BookedIn.ai"
+                    loading="lazy"
                     style={{ overflow: 'auto' }}
                   />
                 </div>

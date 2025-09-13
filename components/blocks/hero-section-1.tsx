@@ -11,12 +11,14 @@ import { Particles } from '@/components/ui/particles'
 import { AnimatedTooltipPreview } from '@/components/ui/animated-tooltip-demo'
 import { StarRating } from '@/components/ui/star-rating'
 import { TestimonialCarouselDemo } from '@/components/ui/testimonial-demo'
-import BeforeAfterSection from '@/components/blocks/BeforeAfterSection'
-import WhoIsThisForSection from '@/components/blocks/WhoIsThisForSection'
-import PricingSection from '@/components/blocks/PricingSection'
-import VideoTestimonialsSection from '@/components/blocks/VideoTestimonialsSection'
-import BookingSection from '@/components/blocks/BookingSection'
+import dynamic from 'next/dynamic'
 import { cn } from '@/lib/utils'
+
+const BeforeAfterSection = dynamic(() => import('@/components/blocks/BeforeAfterSection'))
+const WhoIsThisForSection = dynamic(() => import('@/components/blocks/WhoIsThisForSection'))
+const PricingSection = dynamic(() => import('@/components/blocks/PricingSection'))
+const VideoTestimonialsSection = dynamic(() => import('@/components/blocks/VideoTestimonialsSection'), { ssr: false })
+const BookingSection = dynamic(() => import('@/components/blocks/BookingSection'), { ssr: false })
 
 const transitionVariants = {
     item: {
@@ -37,6 +39,41 @@ const transitionVariants = {
         },
     },
 }
+
+// Lightweight click-to-play wrapper for Wistia (defers iframe until interaction)
+const WistiaLite: React.FC<{ src: string; title: string; poster?: string }> = ({ src, title, poster }) => {
+  const [play, setPlay] = React.useState(false)
+  return (
+    <div className="relative aspect-video rounded-2xl overflow-hidden">
+      {!play ? (
+        <button
+          type="button"
+          onClick={() => setPlay(true)}
+          className="group absolute inset-0 w-full h-full"
+          aria-label="Play video"
+        >
+          {poster ? (
+            <img src={poster} alt={title} className="w-full h-full object-cover" />
+          ) : (
+            <div className="w-full h-full bg-gray-200 dark:bg-gray-800" />
+          )}
+          <div className="absolute inset-0 grid place-items-center">
+            <div className="rounded-full bg-white/90 p-4 shadow group-hover:scale-105 transition">▶</div>
+          </div>
+        </button>
+      ) : (
+        <iframe
+          src={src}
+          title={title}
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          className="absolute inset-0 w-full h-full"
+        />
+      )}
+    </div>
+  )
+}
+
 
 export function HeroSection() {
     return (
@@ -85,12 +122,17 @@ export function HeroSection() {
                                 },
                             }}
                             className="absolute inset-0 -z-20">
+                            {/*
+                              Background image optimized with Next/Image via external CDN would require next.config images.domains.
+                              Keep as <img> but reduce intrinsic size and scope to large screens only.
+                            */}
                             <img
                                 src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
                                 alt="background"
-                                className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
-                                width="3276"
-                                height="4095"
+                                className="absolute inset-x-0 top-56 -z-20 hidden lg:block"
+                                width={1600}
+                                height={900}
+                                loading="eager"
                             />
                         </AnimatedGroup>
                         <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]" />
@@ -138,13 +180,10 @@ export function HeroSection() {
                                         />
                                         <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-4xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1 z-20">
                                             <div className="aspect-video relative rounded-2xl z-30">
-                                                <iframe
+                                                <WistiaLite
                                                     src="https://fast.wistia.net/embed/iframe/vuxx1meqz9?seo=true&videoFoam=false"
                                                     title="BookedIn Demo Video"
-                                                    allow="autoplay; fullscreen"
-                                                    allowFullScreen
-                                                    className="absolute inset-0 w-full h-full rounded-2xl"
-                                                ></iframe>
+                                                />
                                             </div>
                                         </div>
                                     </div>
