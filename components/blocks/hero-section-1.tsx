@@ -53,7 +53,15 @@ const WistiaLite: React.FC<{ src: string; title: string; poster?: string }> = ({
           aria-label="Play video"
         >
           {poster ? (
-            <img src={poster} alt={title} className="w-full h-full object-cover" />
+            <img
+              src={poster}
+              alt={title}
+              width={1280}
+              height={720}
+              loading="eager"
+              fetchPriority="high"
+              className="w-full h-full object-cover"
+            />
           ) : (
             <div className="w-full h-full bg-gray-200 dark:bg-gray-800" />
           )}
@@ -183,6 +191,7 @@ export function HeroSection() {
                                                 <WistiaLite
                                                     src="https://fast.wistia.net/embed/iframe/vuxx1meqz9?seo=true&videoFoam=false"
                                                     title="BookedIn Demo Video"
+                                                    poster="/hero-poster.svg"
                                                 />
                                             </div>
                                         </div>

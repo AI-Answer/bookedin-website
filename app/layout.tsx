@@ -41,6 +41,8 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico?v=1" />
         <link rel="apple-touch-icon" href="/favicon.ico?v=1" />
         <meta name="theme-color" content="#305AE3" />
+        <link rel="preload" as="image" href="/hero-poster.svg" fetchPriority="high" />
+
         {/* Preconnects for key third-parties */}
         <link rel="preconnect" href="https://fast.wistia.net" />
         <link rel="preconnect" href="https://app.converti.ai" />
