@@ -75,14 +75,16 @@ export default function RootLayout({
         <GlobalClickTracker />
         {children}
         {/* VisitorTracking tracer init (define before script loads) */}
-        <Script id="visitor-tracer-init" strategy="beforeInteractive">
+        <Script id="visitor-tracer-init" strategy="lazyOnload">
           {`
-            function init_tracer() {
-              var tracer = new Tracer({
-                websiteId : "d85f88d2-8bc2-4a3a-8940-7d7cdde14eab",
-                async : true,
-                debug : false
-              });
+            if (typeof window !== 'undefined') {
+              function init_tracer() {
+                var tracer = new Tracer({
+                  websiteId : "d85f88d2-8bc2-4a3a-8940-7d7cdde14eab",
+                  async : true,
+                  debug : false
+                });
+              }
             }
           `}
         </Script>
@@ -90,40 +92,64 @@ export default function RootLayout({
         <Script
           id="visitor-tracer-src"
           src="https://app.visitortracking.com/assets/js/tracer.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           async
         />
-        {/* Senja testimonials widget */}
-        <Script
-          src="https://widget.senja.io/widget/5d2cb7d6-db9e-4868-9bae-5a1662ec1c8f/platform.js"
-          strategy="afterInteractive"
-          async
-        />
-
         {/* Meta Pixel */}
-        <Script id="meta-pixel" strategy="afterInteractive">
+        <Script id="meta-pixel" strategy="lazyOnload">
           {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1279721066698447');
-            fbq('track', 'PageView');
+            if (typeof window !== 'undefined') {
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1279721066698447');
+              fbq('track', 'PageView');
+            }
           `}
         </Script>
         <noscript dangerouslySetInnerHTML={{ __html: '<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1279721066698447&ev=PageView&noscript=1" />' }} />
 
         {/* Google (reuse existing gtag.js loader, add Ads config) */}
-        <Script id="gtag-ads-init" strategy="afterInteractive">
+        <Script id="gtag-ads-init" strategy="lazyOnload">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-11413017903');
+            if (typeof window !== 'undefined') {
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-11413017903');
+            }
+          `}
+        </Script>
+
+        {/* Funnelytics tracking */}
+        <Script id="funnelytics-tracking" strategy="lazyOnload">
+          {`
+            if (typeof window !== 'undefined') {
+              (function(funnel) {
+                var deferredEvents = [];
+                window.funnelytics = {
+                  events: {
+                    trigger: function (name, attributes, callback, opts) {
+                      deferredEvents.push({name: name, attributes: attributes, callback: callback, opts: opts});
+                    }
+                  }
+                };
+                var insert = document.getElementsByTagName('script')[0],
+                    script = document.createElement('script');
+                script.addEventListener('load', function() {
+                  window.funnelytics.init(funnel, false, deferredEvents, {});
+                });
+                script.src = 'https://cdn.funnelytics.io/track-v3.js';
+                script.type = 'text/javascript';
+                script.async = true;
+                insert.parentNode.insertBefore(script, insert);
+              })('44fc4944-42f6-4964-b257-aeddbc4ee011');
+            }
           `}
         </Script>
       </body>
