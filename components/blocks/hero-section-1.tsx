@@ -209,7 +209,6 @@ const menuItems = [
     { name: 'How It Works', href: '#features' },
     { name: 'Who This Is For', href: '#solution' },
     { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Pricing', href: '#pricing' },
 ]
 
 const HeroHeader = () => {
