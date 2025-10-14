@@ -148,33 +148,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
           `}
         </Script>
-
-        {/* Funnelytics tracking */}
-        <Script id="funnelytics-tracking" strategy="lazyOnload">
-          {`
-            if (typeof window !== 'undefined') {
-              (function(funnel) {
-                var deferredEvents = [];
-                window.funnelytics = {
-                  events: {
-                    trigger: function (name, attributes, callback, opts) {
-                      deferredEvents.push({name: name, attributes: attributes, callback: callback, opts: opts});
-                    }
-                  }
-                };
-                var insert = document.getElementsByTagName('script')[0],
-                    script = document.createElement('script');
-                script.addEventListener('load', function() {
-                  window.funnelytics.init(funnel, false, deferredEvents, {"anonymiseUsers":false});
-                });
-                script.src = 'https://cdn.funnelytics.io/track-v3.js';
-                script.type = 'text/javascript';
-                script.async = true;
-                insert.parentNode.insertBefore(script, insert);
-              })('44fc4944-42f6-4964-b257-aeddbc4ee011');
-            }
-          `}
-        </Script>
       </body>
     </html>
   );
