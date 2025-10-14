@@ -142,7 +142,7 @@ export default function RootLayout({
                 var insert = document.getElementsByTagName('script')[0],
                     script = document.createElement('script');
                 script.addEventListener('load', function() {
-                  window.funnelytics.init(funnel, false, deferredEvents, {});
+                  window.funnelytics.init(funnel, false, deferredEvents, {"anonymiseUsers":false});
                 });
                 script.src = 'https://cdn.funnelytics.io/track-v3.js';
                 script.type = 'text/javascript';
