@@ -18,7 +18,7 @@ const PricingSection: React.FC = () => {
       ],
       description: "Perfect for getting started with AI automation",
       buttonText: "Get Started",
-      href: "https://www.skool.com/bookedin",
+      href: "https://dashboard.bookedin.ai/register",
       isPopular: false
     },
     {
