@@ -117,7 +117,7 @@ export function HeroSection() {
                                             {/* CTA Buttons */}
                                             <div className="flex flex-col sm:flex-row gap-4 pt-4">
                                                 <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                                                    <Link href="https://www.skool.com/bookedin" target="_blank" rel="noopener noreferrer" prefetch={false}>
+                                                    <Link href="https://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer" prefetch={false}>
                                                         Try out the platform
                                                     </Link>
                                                 </Button>
