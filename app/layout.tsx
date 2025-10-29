@@ -80,6 +80,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             `,
           }}
         />
+
+        {/* DataFast Analytics */}
+        <script
+          defer
+          data-website-id="dfid_WHG5OWpYj8vvgWbEiRl7C"
+          data-domain="bookedin.ai"
+          src="https://datafa.st/js/script.js"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
