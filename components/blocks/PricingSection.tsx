@@ -5,7 +5,7 @@ import { Particles } from '@/components/ui/particles';
 const PricingSection: React.FC = () => {
   const pricingPlans = [
     {
-      name: "Pro",
+      name: "Platform",
       price: "297",
       yearlyPrice: "2970", // Annual total: $297 × 10 months = $2970 (20% savings)
       period: "month",
@@ -18,7 +18,7 @@ const PricingSection: React.FC = () => {
       ],
       description: "Perfect for getting started with AI automation",
       buttonText: "Get Started",
-      href: "https://www.skool.com/bookedin",
+      href: "https://dashboard.bookedin.ai/register",
       isPopular: false
     },
     {
@@ -27,21 +27,22 @@ const PricingSection: React.FC = () => {
       yearlyPrice: "4970", // Annual total: $497 × 10 months = $4970 (20% savings)
       period: "month",
       features: [
-        "Everything in Pro",
+        "Everything in Platform",
         "White label rights to BookedIn.ai platform",
         "Priority 1-1 support",
-        "Unlimited credits with keys"
+        "Unlimited credits with keys",
+        "Advanced automation features"
       ],
       description: "Ideal for agencies wanting to resell AI services",
-      buttonText: "Get Started",
-      href: "https://www.skool.com/bookedin",
-      isPopular: true
+      buttonText: "Contact Sales",
+      href: "/book",
+      isPopular: false
     },
     {
-      name: "Custom",
-      price: "0", // Will be hidden with custom styling
-      yearlyPrice: "0",
-      period: "Done for you",
+      name: "Done For You",
+      price: "2500",
+      yearlyPrice: "2500",
+      period: "one-time",
       features: [
         "Full setup and management",
         "Dedicated Account Manager",
@@ -52,8 +53,8 @@ const PricingSection: React.FC = () => {
       ],
       description: "Fully managed solution tailored to your needs",
       buttonText: "Contact Sales",
-      href: "#demo",
-      isPopular: false
+      href: "/book",
+      isPopular: true
     }
   ];
 

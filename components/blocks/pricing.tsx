@@ -3,7 +3,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { useMediaQuery } from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
@@ -36,7 +35,6 @@ export function Pricing({
   description = "Choose the plan that works for you\nAll plans include access to our platform, lead generation tools, and dedicated support.",
 }: PricingProps) {
   const [isMonthly, setIsMonthly] = useState(true);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
   const switchRef = useRef<HTMLButtonElement>(null);
 
   const handleToggle = (checked: boolean) => {
@@ -79,56 +77,44 @@ export function Pricing({
         </p>
       </div>
 
-      <div className="flex justify-center mb-10">
-        <label className="relative inline-flex items-center cursor-pointer">
-          <Label>
-            <Switch
-              ref={switchRef as any}
-              checked={!isMonthly}
-              onCheckedChange={handleToggle}
-              className="relative"
-            />
-          </Label>
-        </label>
-        <span className="ml-2 font-semibold">
-          Annual billing <span className="text-primary">(Save 20%)</span>
-        </span>
-      </div>
+      {plans.some(plan => plan.period === "month") && (
+        <div className="flex justify-center mb-10">
+          <label className="relative inline-flex items-center cursor-pointer">
+            <Label>
+              <Switch
+                ref={switchRef as any}
+                checked={!isMonthly}
+                onCheckedChange={handleToggle}
+                className="relative"
+              />
+            </Label>
+          </label>
+          <span className="ml-2 font-semibold">
+            Annual billing <span className="text-primary">(Save 20%)</span>
+          </span>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-3 sm:2 gap-4">
         {plans.map((plan, index) => (
           <motion.div
             key={index}
-            initial={{ y: 50, opacity: 1 }}
-            whileInView={
-              isDesktop
-                ? {
-                    y: plan.isPopular ? -20 : 0,
-                    opacity: 1,
-                    x: index === 2 ? -30 : index === 0 ? 30 : 0,
-                    scale: index === 0 || index === 2 ? 0.94 : 1.0,
-                  }
-                : {}
-            }
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{
-              duration: 1.6,
+              duration: 0.8,
               type: "spring",
               stiffness: 100,
               damping: 30,
-              delay: 0.4,
+              delay: index * 0.1,
               opacity: { duration: 0.5 },
             }}
             className={cn(
               `rounded-2xl border-[1px] p-6 bg-background text-center lg:flex lg:flex-col lg:justify-center relative`,
-              plan.isPopular ? "border-primary border-2" : "border-border",
+              plan.isPopular ? "border-primary border-2 shadow-xl" : "border-border",
               "flex flex-col",
-              !plan.isPopular && "mt-5",
-              index === 0 || index === 2
-                ? "z-0 transform translate-x-0 translate-y-0 -translate-z-[50px] rotate-y-[10deg]"
-                : "z-10",
-              index === 0 && "origin-right",
-              index === 2 && "origin-left"
+              plan.isPopular ? "z-20" : "z-10"
             )}
           >
             {plan.isPopular && (
@@ -144,46 +130,45 @@ export function Pricing({
                 {plan.name}
               </p>
               <div className="mt-6 flex items-center justify-center gap-x-2">
-                {plan.name === "Custom" ? (
-                  <span className="text-3xl font-bold tracking-tight text-foreground">
-                    Contact Sales
-                  </span>
-                ) : (
-                  <>
-                    <span className="text-5xl font-bold tracking-tight text-foreground">
-                      <NumberFlow
-                        value={
-                          isMonthly ? Number(plan.price) : Math.round(Number(plan.yearlyPrice) / 12 * 100) / 100
-                        }
-                        format={{
-                          style: "currency",
-                          currency: "USD",
-                          minimumFractionDigits: 0,
-                          maximumFractionDigits: 0,
-                        }}
+                <span className="text-5xl font-bold tracking-tight text-foreground">
+                  <NumberFlow
+                    value={
+                      plan.period === "one-time"
+                        ? Number(plan.price)
+                        : isMonthly
+                          ? Number(plan.price)
+                          : Math.round(Number(plan.yearlyPrice) / 12 * 100) / 100
+                    }
+                    format={{
+                      style: "currency",
+                      currency: "USD",
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                    }}
 
-                        transformTiming={{
-                          duration: 500,
-                          easing: "ease-out",
-                        }}
-                        willChange
-                        className="font-variant-numeric: tabular-nums"
-                      />
-                    </span>
-                    {plan.period !== "Next 3 months" && (
-                      <span className="text-sm font-semibold leading-6 tracking-wide text-muted-foreground">
-                        / {plan.period}
-                      </span>
-                    )}
-                  </>
+                    transformTiming={{
+                      duration: 500,
+                      easing: "ease-out",
+                    }}
+                    willChange
+                    className="font-variant-numeric: tabular-nums"
+                  />
+                </span>
+                {plan.period !== "Next 3 months" && (
+                  <span className="text-sm font-semibold leading-6 tracking-wide text-muted-foreground">
+                    {plan.period === "one-time" ? "one-time" : `/ ${plan.period}`}
+                  </span>
                 )}
               </div>
 
-              {plan.name !== "Custom" && (
-                <p className="text-xs leading-5 text-muted-foreground">
-                  {isMonthly ? "billed monthly" : "billed annually"}
-                </p>
-              )}
+              <p className="text-xs leading-5 text-muted-foreground">
+                {plan.period === "one-time"
+                  ? "one-time payment"
+                  : isMonthly
+                    ? "billed monthly"
+                    : "billed annually"
+                }
+              </p>
 
               <ul className="mt-5 gap-2 flex flex-col">
                 {plan.features.map((feature, idx) => (

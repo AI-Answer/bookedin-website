@@ -2,23 +2,19 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, ChevronRight, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
-import { HeroVideoDialog } from '@/components/ui/hero-video-dialog'
 import { Particles } from '@/components/ui/particles'
 
-import { AnimatedTooltipPreview } from '@/components/ui/animated-tooltip-demo'
-import { StarRating } from '@/components/ui/star-rating'
 import { TestimonialCarouselDemo } from '@/components/ui/testimonial-demo'
-import dynamic from 'next/dynamic'
+import BeforeAfterSection from '@/components/blocks/BeforeAfterSection'
+import WhoIsThisForSection from '@/components/blocks/WhoIsThisForSection'
+import PricingSection from '@/components/blocks/PricingSection'
+import VideoTestimonialsSection from '@/components/blocks/VideoTestimonialsSection'
+import BookingSection from '@/components/blocks/BookingSection'
+import WistiaVideo from '@/components/blocks/WistiaVideo'
 import { cn } from '@/lib/utils'
-
-const BeforeAfterSection = dynamic(() => import('@/components/blocks/BeforeAfterSection'))
-const WhoIsThisForSection = dynamic(() => import('@/components/blocks/WhoIsThisForSection'))
-const PricingSection = dynamic(() => import('@/components/blocks/PricingSection'))
-const VideoTestimonialsSection = dynamic(() => import('@/components/blocks/VideoTestimonialsSection'), { ssr: false })
-const BookingSection = dynamic(() => import('@/components/blocks/BookingSection'), { ssr: false })
 
 const transitionVariants = {
     item: {
@@ -39,49 +35,6 @@ const transitionVariants = {
         },
     },
 }
-
-// Lightweight click-to-play wrapper for Wistia (defers iframe until interaction)
-const WistiaLite: React.FC<{ src: string; title: string; poster?: string }> = ({ src, title, poster }) => {
-  const [play, setPlay] = React.useState(false)
-  return (
-    <div className="relative aspect-video rounded-2xl overflow-hidden">
-      {!play ? (
-        <button
-          type="button"
-          onClick={() => setPlay(true)}
-          className="group absolute inset-0 w-full h-full"
-          aria-label="Play video"
-        >
-          {poster ? (
-            <img
-              src={poster}
-              alt={title}
-              width={1280}
-              height={720}
-              loading="eager"
-              fetchPriority="high"
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full bg-gray-200 dark:bg-gray-800" />
-          )}
-          <div className="absolute inset-0 grid place-items-center">
-            <div className="rounded-full bg-white/90 p-4 shadow group-hover:scale-105 transition">▶</div>
-          </div>
-        </button>
-      ) : (
-        <iframe
-          src={src}
-          title={title}
-          allow="autoplay; fullscreen"
-          allowFullScreen
-          className="absolute inset-0 w-full h-full"
-        />
-      )}
-    </div>
-  )
-}
-
 
 export function HeroSection() {
     return (
@@ -130,110 +83,76 @@ export function HeroSection() {
                                 },
                             }}
                             className="absolute inset-0 -z-20">
-                            {/*
-                              Background image optimized with Next/Image via external CDN would require next.config images.domains.
-                              Keep as <img> but reduce intrinsic size and scope to large screens only.
-                            */}
                             <img
                                 src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
                                 alt="background"
-                                className="absolute inset-x-0 top-56 -z-20 hidden lg:block"
-                                width={1600}
-                                height={900}
-                                loading="eager"
+                                className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
+                                width="3276"
+                                height="4095"
                             />
                         </AnimatedGroup>
                         <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]" />
                         <div className="mx-auto max-w-7xl px-6">
-                            <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                                <AnimatedGroup variants={transitionVariants}>
-                                    {/* Animated Tooltip Eyebrow with Stars */}
-                                    <div className="mb-6 flex flex-col items-center justify-center gap-3">
-                                        <StarRating
-                                            rating={5}
-                                            size={20}
-                                            className="justify-center"
-                                        />
-                                        <div className="scale-75 sm:scale-90">
-                                            <AnimatedTooltipPreview />
-                                        </div>
-                                    </div>
+                            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                                {/* Left Column - Content */}
+                                <div className="lg:pr-8">
+                                    <AnimatedGroup variants={transitionVariants}>
+                                        <div className="space-y-6">
+                                            {/* Eyebrow */}
+                                            <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-primary/10 text-primary border-primary/20">
+                                                Fix your Leaky Funnel
+                                            </div>
 
-                                    <h1
-                                        className="mt-4 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-8 xl:text-[5.25rem]">
-                                        Convert leads into meetings for your clients
-                                    </h1>
-                                    <p
-                                        className="mx-auto mt-6 max-w-2xl text-balance text-lg">
-                                        BookedIn automatically reaches out and nurtures leads via Phone, SMS, Whatsapp, Email, and Social Media DMs and turns them into potential customers - under your brand.
-                                    </p>
-                                </AnimatedGroup>
+                                            {/* Headline */}
+                                            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                                                Turn More Leads Into{' '}
+                                                <span className="text-primary">Educated Qualified Appointments</span>{' '}
+                                                That Show
+                                            </h1>
 
-                                <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.5,
-                                                },
-                                            },
-                                        },
-                                        ...transitionVariants,
-                                    }}>
-                                    <div className="relative mt-6 overflow-hidden px-2 sm:mt-8">
-                                        <div
-                                            aria-hidden
-                                            className="bg-gradient-to-b to-background absolute inset-0 z-0 from-transparent from-35%"
-                                        />
-                                        <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-4xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1 z-20">
-                                            <div className="aspect-video relative rounded-2xl z-30">
-                                                <WistiaLite
-                                                    src="https://fast.wistia.net/embed/iframe/vuxx1meqz9?seo=true&videoFoam=false"
-                                                    title="BookedIn Demo Video"
-                                                    poster="/hero-poster.svg"
-                                                />
+                                            {/* Subhead */}
+                                            <p className="text-lg leading-8 text-muted-foreground max-w-2xl">
+                                                A Done-For-You System to Predictably Fill Your Pipeline With Qualified Leads and shorten Your Sales Cycles so you can predictably scale your business with AI
+                                            </p>
+
+                                            {/* CTA Buttons */}
+                                            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                                                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                                                    <Link href="https://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer" prefetch={false}>
+                                                        Try out the platform
+                                                    </Link>
+                                                </Button>
+                                                <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                                                    <Link href="/book" prefetch={false}>
+                                                        Let us build it for you
+                                                    </Link>
+                                                </Button>
                                             </div>
                                         </div>
-                                    </div>
-                                </AnimatedGroup>
+                                    </AnimatedGroup>
+                                </div>
 
-                                <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
+                                {/* Right Column - Video */}
+                                <div className="lg:pl-8">
+                                    <AnimatedGroup
+                                        variants={{
+                                            container: {
+                                                visible: {
+                                                    transition: {
+                                                        staggerChildren: 0.05,
+                                                        delayChildren: 0.3,
+                                                    },
                                                 },
                                             },
-                                        },
-                                        ...transitionVariants,
-                                    }}
-                                    className="mt-6 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[14px] border p-0.5">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base">
-                                            <Link href="https://www.skool.com/bookedin" target="_blank" rel="noopener noreferrer">
-                                                <span className="text-nowrap">Get Started</span>
-                                            </Link>
-                                        </Button>
-                                    </div>
-                                    <Button
-                                        key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-10.5 rounded-xl px-5">
-                                        <Link href="#demo" prefetch={false}>
-                                            <span className="text-nowrap">Schedule a Demo</span>
-                                        </Link>
-                                    </Button>
-                                </AnimatedGroup>
+                                            ...transitionVariants,
+                                        }}>
+                                        <div className="relative overflow-hidden">
+                                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                                <WistiaVideo videoId="rvy1frsfzg" />
+                                            </div>
+                                        </div>
+                                    </AnimatedGroup>
+                                </div>
                             </div>
                         </div>
 
@@ -283,7 +202,7 @@ const menuItems = [
     { name: 'How It Works', href: '#features' },
     { name: 'Who This Is For', href: '#solution' },
     { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Pricing', href: '#pricing' },
+    { name: 'Tutorials', href: '/tutorials' },
 ]
 
 const HeroHeader = () => {
@@ -357,7 +276,7 @@ const HeroHeader = () => {
                                     asChild
                                     variant="outline"
                                     size="sm">
-                                    <Link href="#demo" prefetch={false} onClick={() => setMenuState(false)}>
+                                    <Link href="/book" prefetch={false} onClick={() => setMenuState(false)}>
                                         <span>Schedule a Demo</span>
                                     </Link>
                                 </Button>
