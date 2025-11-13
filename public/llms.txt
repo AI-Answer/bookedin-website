@@ -1,0 +1,80 @@
+# BookedIn.ai - AI Lead Conversion Platform
+
+> AI-powered lead conversion system that automates follow-ups and converts more leads into booked appointments
+
+## What is BookedIn.ai?
+
+BookedIn.ai is a lead conversion SaaS platform that helps businesses automatically follow up with leads and convert them into booked appointments. The platform uses AI to personalize outreach, automate follow-up sequences, and dramatically reduce no-show rates.
+
+## Key Features
+
+- **AI-Powered Follow-Ups**: Automatically send personalized follow-up messages to leads
+- **Multi-Channel Outreach**: Email, SMS, and voice call automation
+- **Smart Scheduling**: Intelligent appointment booking and calendar management
+- **No-Show Reduction**: Automated reminders that cut no-shows by up to 83%
+- **Lead Scoring**: AI-driven lead qualification and prioritization
+- **CRM Integration**: Connects with popular CRM systems
+
+## Pricing
+
+### Platform Plan - $297/month
+- Full platform access
+- Unlimited leads
+- AI-powered automation
+- Multi-channel outreach
+- Analytics dashboard
+
+### Agency Plan - $497/month
+- Everything in Platform
+- White-label solution
+- Client management
+- Agency dashboard
+- Priority support
+
+### Done For You - $2,500 one-time
+- Complete setup and configuration
+- Custom automation workflows
+- Training and onboarding
+- 30-day support included
+
+## Use Cases
+
+- **Real Estate Agents**: Follow up with property inquiries automatically
+- **Service Businesses**: Convert consultation requests into booked appointments
+- **Coaches & Consultants**: Automate discovery call scheduling
+- **Agencies**: Manage lead conversion for multiple clients
+- **Sales Teams**: Never miss a follow-up opportunity
+
+## Resources
+
+- **Video Tutorials**: https://bookedin.ai/tutorials
+- **YouTube Channel (BookedIn.ai)**: https://www.youtube.com/@bookedinai
+- **YouTube Channel (AI Automation)**: https://www.youtube.com/@SaminYasar_
+- **Book a Demo**: https://bookedin.ai/book
+- **Get Started**: https://dashboard.bookedin.ai/register
+
+## Company Information
+
+- **Website**: https://bookedin.ai
+- **Product**: Lead conversion and appointment booking automation
+- **Target Audience**: Service businesses, agencies, coaches, consultants, real estate agents
+- **Founded**: 2024
+- **Founder**: Samin Yasar
+
+## Technical Details
+
+- **Platform**: Next.js 15 with React
+- **Hosting**: Railway
+- **Analytics**: Google Analytics, PostHog, DataFast
+- **Integration**: API-first architecture for easy CRM integration
+
+## Contact
+
+- **Dashboard**: https://dashboard.bookedin.ai
+- **Support**: Available through platform
+- **Demo Booking**: https://bookedin.ai/book
+
+---
+
+For more detailed information, see /llms-full.txt
+

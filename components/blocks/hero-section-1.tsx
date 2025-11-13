@@ -13,6 +13,7 @@ import WhoIsThisForSection from '@/components/blocks/WhoIsThisForSection'
 import PricingSection from '@/components/blocks/PricingSection'
 import VideoTestimonialsSection from '@/components/blocks/VideoTestimonialsSection'
 import BookingSection from '@/components/blocks/BookingSection'
+import WistiaVideo from '@/components/blocks/WistiaVideo'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -147,16 +148,7 @@ export function HeroSection() {
                                         }}>
                                         <div className="relative overflow-hidden">
                                             <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                                                <div className="aspect-video relative rounded-2xl">
-                                                    <div dangerouslySetInnerHTML={{
-                                                        __html: `
-                                                            <script src="https://fast.wistia.com/player.js" async></script>
-                                                            <script src="https://fast.wistia.com/embed/rvy1frsfzg.js" async type="module"></script>
-                                                            <style>wistia-player[media-id='rvy1frsfzg']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rvy1frsfzg/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-                                                            <wistia-player media-id="rvy1frsfzg" aspect="1.7777777777777777" class="absolute inset-0 w-full h-full rounded-2xl"></wistia-player>
-                                                        `
-                                                    }} />
-                                                </div>
+                                                <WistiaVideo videoId="rvy1frsfzg" />
                                             </div>
                                         </div>
                                     </AnimatedGroup>
@@ -210,6 +202,7 @@ const menuItems = [
     { name: 'How It Works', href: '#features' },
     { name: 'Who This Is For', href: '#solution' },
     { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Tutorials', href: '/tutorials' },
 ]
 
 const HeroHeader = () => {
