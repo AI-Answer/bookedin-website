@@ -42,6 +42,17 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico?v=1" />
         <link rel="apple-touch-icon" href="/favicon.ico?v=1" />
         <meta name="theme-color" content="#305AE3" />
+
+        {/* Wistia Player - Load FIRST for hero video priority */}
+        <link rel="preconnect" href="https://fast.wistia.com" />
+        <link rel="dns-prefetch" href="https://fast.wistia.com" />
+        {/* Preload hero video thumbnail for instant display */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://fast.wistia.com/embed/medias/rvy1frsfzg/swatch"
+          fetchPriority="high"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -59,6 +70,12 @@ export default function RootLayout({
 
         <GlobalClickTracker />
         {children}
+
+        {/* Wistia Player Scripts - Load with HIGH PRIORITY before other analytics */}
+        <Script
+          src="https://fast.wistia.com/assets/external/E-v1.js"
+          strategy="beforeInteractive"
+        />
 
         {/* Google Tag Manager */}
         <Script id="gtm-script" strategy="afterInteractive">
