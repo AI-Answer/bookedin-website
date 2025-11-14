@@ -248,6 +248,8 @@ const HeroHeader = () => {
                                         <Link
                                             href={item.href}
                                             prefetch={false}
+                                            target={item.href === '/blog' ? '_blank' : undefined}
+                                            rel={item.href === '/blog' ? 'noopener noreferrer' : undefined}
                                             className="text-foreground hover:text-primary block duration-150">
                                             <span>{item.name}</span>
                                         </Link>
@@ -264,6 +266,8 @@ const HeroHeader = () => {
                                             <Link
                                                 href={item.href}
                                                 prefetch={false}
+                                                target={item.href === '/blog' ? '_blank' : undefined}
+                                                rel={item.href === '/blog' ? 'noopener noreferrer' : undefined}
                                                 onClick={() => setMenuState(false)}
                                                 className="text-foreground hover:text-primary block duration-150">
                                                 <span>{item.name}</span>
