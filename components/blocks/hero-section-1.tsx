@@ -203,6 +203,7 @@ const menuItems = [
     { name: 'Who This Is For', href: '#solution' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Tutorials', href: '/tutorials' },
+    { name: 'Blog', href: '/blog' },
 ]
 
 const HeroHeader = () => {
