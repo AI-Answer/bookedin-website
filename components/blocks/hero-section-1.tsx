@@ -105,14 +105,13 @@ export function HeroSection() {
 
                                             {/* Headline */}
                                             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                                                Turn More Leads Into{' '}
-                                                <span className="text-primary">Educated Qualified Appointments</span>{' '}
-                                                That Show
+                                                Multi Channel AI Agent that{' '}
+                                                <span className="text-primary">Books You More Sales Calls</span>
                                             </h1>
 
                                             {/* Subhead */}
                                             <p className="text-lg leading-8 text-muted-foreground max-w-2xl">
-                                                A Done-For-You System to Predictably Fill Your Pipeline With Qualified Leads and shorten Your Sales Cycles so you can predictably scale your business with AI
+                                                Effortlessly create AI agents that automate followups, database reactivation, and appointment scheduling. Then whitelabel and resell these high-value services as a fully productized system to scale your agency.
                                             </p>
 
                                             {/* CTA Buttons */}
