@@ -73,27 +73,27 @@ const BeforeAfterSection: React.FC = () => {
             <h3 className="text-lg font-bold text-blue-600 mb-3">THE BOOKEDIN WAY</h3>
             <ul className="space-y-2">
               <li className="flex items-start">
-                <span className="text-blue-500 mr-2 text-sm">⚡</span>
+                <span className="text-blue-500 mr-2 text-sm">📅</span>
                 <div>
-                  <span className="font-semibold text-gray-900 text-sm">Fill in your business details</span>
+                  <span className="font-semibold text-gray-900 text-sm">Connect your calendars</span>
+                  <span className="text-gray-600 text-sm"> (2 minutes)</span>
+                  <p className="text-xs text-gray-600 mt-1">Link your calendar so your AI can book appointments automatically.</p>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-500 mr-2 text-sm">🔗</span>
+                <div>
+                  <span className="font-semibold text-gray-900 text-sm">Connect your calendars and CRM</span>
                   <span className="text-gray-600 text-sm"> (5 minutes)</span>
-                  <p className="text-xs text-gray-600 mt-1">Add your services, pricing, FAQs, and hours - everything your AI needs to know.</p>
+                  <p className="text-xs text-gray-600 mt-1">Sync your CRM and channels so your AI can reach leads everywhere.</p>
                 </div>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-500 mr-2 text-sm">🤖</span>
                 <div>
-                  <span className="font-semibold text-gray-900 text-sm">Watch your AI agents go live</span>
+                  <span className="font-semibold text-gray-900 text-sm">Watch your AI agent go live and do your things</span>
                   <span className="text-gray-600 text-sm"> (instantly)</span>
-                  <p className="text-xs text-gray-600 mt-1">Your agents are automatically created and ready. Test them, tweak responses, perfect the flow.</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2 text-sm">📅</span>
-                <div>
-                  <span className="font-semibold text-gray-900 text-sm">Connect calendar & let them work</span>
-                  <span className="text-gray-600 text-sm"> (24/7)</span>
-                  <p className="text-xs text-gray-600 mt-1">Link your calendar and channels. Your AI now handles every lead, books appointments, never forgets.</p>
+                  <p className="text-xs text-gray-600 mt-1">Your AI agent is ready to handle leads, book appointments, and follow up 24/7.</p>
                 </div>
               </li>
             </ul>
