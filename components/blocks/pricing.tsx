@@ -131,30 +131,34 @@ export function Pricing({
               </p>
               <div className="mt-6 flex items-center justify-center gap-x-2">
                 <span className="text-5xl font-bold tracking-tight text-foreground">
-                  <NumberFlow
-                    value={
-                      plan.period === "one-time"
-                        ? Number(plan.price)
-                        : isMonthly
+                  {plan.price === "Custom" ? (
+                    "Custom"
+                  ) : (
+                    <NumberFlow
+                      value={
+                        plan.period === "one-time"
                           ? Number(plan.price)
-                          : Math.round(Number(plan.yearlyPrice) / 12 * 100) / 100
-                    }
-                    format={{
-                      style: "currency",
-                      currency: "USD",
-                      minimumFractionDigits: 0,
-                      maximumFractionDigits: 0,
-                    }}
+                          : isMonthly
+                            ? Number(plan.price)
+                            : Math.round(Number(plan.yearlyPrice) / 12 * 100) / 100
+                      }
+                      format={{
+                        style: "currency",
+                        currency: "USD",
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      }}
 
-                    transformTiming={{
-                      duration: 500,
-                      easing: "ease-out",
-                    }}
-                    willChange
-                    className="font-variant-numeric: tabular-nums"
-                  />
+                      transformTiming={{
+                        duration: 500,
+                        easing: "ease-out",
+                      }}
+                      willChange
+                      className="font-variant-numeric: tabular-nums"
+                    />
+                  )}
                 </span>
-                {plan.period !== "Next 3 months" && (
+                {plan.period !== "Next 3 months" && plan.price !== "Custom" && (
                   <span className="text-sm font-semibold leading-6 tracking-wide text-muted-foreground">
                     {plan.period === "one-time" ? "one-time" : `/ ${plan.period}`}
                   </span>
@@ -162,11 +166,13 @@ export function Pricing({
               </div>
 
               <p className="text-xs leading-5 text-muted-foreground">
-                {plan.period === "one-time"
-                  ? "one-time payment"
-                  : isMonthly
-                    ? "billed monthly"
-                    : "billed annually"
+                {plan.price === "Custom"
+                  ? "tailored to your needs"
+                  : plan.period === "one-time"
+                    ? "one-time payment"
+                    : isMonthly
+                      ? "billed monthly"
+                      : "billed annually"
                 }
               </p>
 
