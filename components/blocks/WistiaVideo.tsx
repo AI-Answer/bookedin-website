@@ -54,15 +54,7 @@ export default function WistiaVideo({ videoId, className = '' }: WistiaVideoProp
               height: '100%'
             }}
           >
-            {/* Thumbnail placeholder while video loads */}
-            {!scriptLoaded && (
-              <img
-                src={`https://fast.wistia.com/embed/medias/${videoId}/swatch`}
-                alt="Video thumbnail"
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="eager"
-              />
-            )}
+            {/* Let Wistia fully manage the inner DOM to avoid React/third-party DOM conflicts */}
           </div>
         </div>
       </div>

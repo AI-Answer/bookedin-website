@@ -1,21 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      {
-        source: '/',
-        has: [
-          {
-            type: 'host',
-            value: 'bookedin.ai',
-          },
-        ],
-        destination: 'https://bookedinai.com',
-        permanent: true,
-      },
-    ]
-  },
   rewrites: async () => {
     return {
       beforeFiles: [

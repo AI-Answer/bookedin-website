@@ -6,7 +6,7 @@ const BeforeAfterSection: React.FC = () => {
     <section className="relative py-12 md:py-16 bg-white overflow-hidden">
       <Particles
         className="absolute inset-0 z-0"
-        quantity={150}
+        quantity={90}
         ease={80}
         color="#305AE3"
         refresh
@@ -103,7 +103,7 @@ const BeforeAfterSection: React.FC = () => {
         {/* Centered Get Started Button */}
         <div className="text-center mt-12">
           <a
-            href="https://www.skool.com/bookedin"
+            href="https://dashboard.bookedin.ai/register"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors inline-block"

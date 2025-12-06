@@ -7,7 +7,7 @@ const BookingSection: React.FC = () => {
     <section className="relative py-16 md:py-20 bg-white overflow-hidden">
       <Particles
         className="absolute inset-0 z-0"
-        quantity={150}
+        quantity={90}
         ease={80}
         color="#305AE3"
         refresh

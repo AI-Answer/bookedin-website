@@ -2,39 +2,47 @@
 
 import React from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { AnimatedGroup } from '@/components/ui/animated-group'
-import { Particles } from '@/components/ui/particles'
-
-import { TestimonialCarouselDemo } from '@/components/ui/testimonial-demo'
-import BeforeAfterSection from '@/components/blocks/BeforeAfterSection'
-import WhoIsThisForSection from '@/components/blocks/WhoIsThisForSection'
-import PricingSection from '@/components/blocks/PricingSection'
-import VideoTestimonialsSection from '@/components/blocks/VideoTestimonialsSection'
-import BookingSection from '@/components/blocks/BookingSection'
-import WistiaVideo from '@/components/blocks/WistiaVideo'
 import { cn } from '@/lib/utils'
 
-const transitionVariants = {
-    item: {
-        hidden: {
-            opacity: 0,
-            filter: 'blur(12px)',
-            y: 12,
-        },
-        visible: {
-            opacity: 1,
-            filter: 'blur(0px)',
-            y: 0,
-            transition: {
-                type: 'spring' as const,
-                bounce: 0.3,
-                duration: 1.5,
-            },
-        },
-    },
-}
+// Perf: defer heavy, below-the-fold sections & effects
+const Particles = dynamic(
+    () => import('@/components/ui/particles').then((mod) => mod.Particles),
+    { ssr: false, loading: () => null }
+)
+
+const TestimonialCarouselDemo = dynamic(
+    () => import('@/components/ui/testimonial-demo').then((mod) => mod.TestimonialCarouselDemo),
+    { ssr: false, loading: () => null }
+)
+
+const BeforeAfterSection = dynamic(
+    () => import('@/components/blocks/BeforeAfterSection'),
+    { ssr: true, loading: () => null }
+)
+
+const WhoIsThisForSection = dynamic(
+    () => import('@/components/blocks/WhoIsThisForSection'),
+    { ssr: true, loading: () => null }
+)
+
+const PricingSection = dynamic(
+    () => import('@/components/blocks/PricingSection'),
+    { ssr: true, loading: () => null }
+)
+
+const VideoTestimonialsSection = dynamic(
+    () => import('@/components/blocks/VideoTestimonialsSection'),
+    { ssr: false, loading: () => null }
+)
+
+const BookingSection = dynamic(
+    () => import('@/components/blocks/BookingSection'),
+    { ssr: true, loading: () => null }
+)
+
 
 export function HeroSection() {
     return (
@@ -43,7 +51,7 @@ export function HeroSection() {
             <main className="overflow-hidden relative">
                 <Particles
                     className="absolute inset-0 z-0"
-                    quantity={200}
+                    quantity={120}
                     ease={80}
                     color="#305AE3"
                     refresh
@@ -57,100 +65,69 @@ export function HeroSection() {
                 </div>
                 <section>
                     <div className="relative pt-24 md:pt-36">
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            delayChildren: 1,
-                                        },
-                                    },
-                                },
-                                item: {
-                                    hidden: {
-                                        opacity: 0,
-                                        y: 20,
-                                    },
-                                    visible: {
-                                        opacity: 1,
-                                        y: 0,
-                                        transition: {
-                                            type: 'spring' as const,
-                                            bounce: 0.3,
-                                            duration: 2,
-                                        },
-                                    },
-                                },
-                            }}
-                            className="absolute inset-0 -z-20">
+                        <div className="absolute inset-0 -z-20">
                             <img
                                 src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                                alt="background"
+                                alt=""
                                 className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
                                 width="3276"
                                 height="4095"
+                                loading="eager"
+                                decoding="async"
                             />
-                        </AnimatedGroup>
+                        </div>
                         <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]" />
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="grid lg:grid-cols-2 gap-12 items-center">
                                 {/* Left Column - Content */}
                                 <div className="lg:pr-8">
-                                    <AnimatedGroup variants={transitionVariants}>
-                                        <div className="space-y-6">
-                                            {/* Eyebrow */}
-                                            <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-primary/10 text-primary border-primary/20">
-                                                Fix your Leaky Funnel
-                                            </div>
-
-                                            {/* Headline */}
-                                            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                                                Multi Channel AI Agent that{' '}
-                                                <span className="text-primary">Books You More Sales Calls</span>
-                                            </h1>
-
-                                            {/* Subhead */}
-                                            <p className="text-lg leading-8 text-muted-foreground max-w-2xl">
-                                                Effortlessly create AI agents that automate followups, database reactivation, and appointment scheduling. Then whitelabel and resell these high-value services as a fully productized system to scale your agency.
-                                            </p>
-
-                                            {/* CTA Buttons */}
-                                            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                                                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                                                    <Link href="https://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer" prefetch={false}>
-                                                        Try out the platform
-                                                    </Link>
-                                                </Button>
-                                                <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                                                    <Link href="/book" prefetch={false}>
-                                                        Let us build it for you
-                                                    </Link>
-                                                </Button>
-                                            </div>
+                                    <div className="space-y-6">
+                                        {/* Eyebrow */}
+                                        <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-primary/10 text-primary border-primary/20">
+                                            Fix your Leaky Funnel
                                         </div>
-                                    </AnimatedGroup>
+
+                                        {/* Headline */}
+                                        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                                            AI Lead Manager That Books You More Sales Calls
+                                        </h1>
+
+                                        {/* Subhead */}
+                                        <p className="text-lg leading-8 text-muted-foreground max-w-2xl">
+                                            Effortlessly create AI agents that automate followups, database reactivation, and appointment scheduling. Then whitelabel and resell these high-value services as a fully productized system to scale your agency.
+                                        </p>
+
+                                        {/* CTA Buttons */}
+                                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                                            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                                                <Link href="https://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer" prefetch={false}>
+                                                    Try out the platform
+                                                </Link>
+                                            </Button>
+                                            <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                                                <Link href="/book" prefetch={false}>
+                                                    Let us build it for you
+                                                </Link>
+                                            </Button>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 {/* Right Column - Video */}
                                 <div className="lg:pl-8">
-                                    <AnimatedGroup
-                                        variants={{
-                                            container: {
-                                                visible: {
-                                                    transition: {
-                                                        staggerChildren: 0.05,
-                                                        delayChildren: 0.3,
-                                                    },
-                                                },
-                                            },
-                                            ...transitionVariants,
-                                        }}>
-                                        <div className="relative overflow-hidden">
-                                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                                                <WistiaVideo videoId="rvy1frsfzg" />
+                                    <div className="relative overflow-hidden">
+                                        <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                            <div style={{ position: 'relative', boxSizing: 'content-box', maxHeight: '80vh', width: '100%', aspectRatio: '1.78', padding: '40px 0 40px 0' }}>
+                                                <iframe
+                                                    src="https://app.supademo.com/embed/cmit6la4z3275l821gamks9al?embed_v=2&utm_source=embed"
+                                                    loading="lazy"
+                                                    title="Bookedin ai product walkthrough"
+                                                    allow="clipboard-write"
+                                                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                                                />
                                             </div>
                                         </div>
-                                    </AnimatedGroup>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -287,7 +264,7 @@ const HeroHeader = () => {
                                 <Button
                                     asChild
                                     size="sm">
-                                    <Link href="https://www.skool.com/bookedin" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setMenuState(false)}>
+                                    <Link href="https://dashboard.bookedin.ai/register" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setMenuState(false)}>
                                         <span>Get Started</span>
                                     </Link>
                                 </Button>

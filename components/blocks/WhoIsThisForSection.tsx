@@ -7,7 +7,7 @@ const WhoIsThisForSection: React.FC = () => {
     <section className="relative py-12 md:py-16 bg-gray-50 overflow-hidden">
       <Particles
         className="absolute inset-0 z-0"
-        quantity={150}
+        quantity={90}
         ease={80}
         color="#305AE3"
         refresh
