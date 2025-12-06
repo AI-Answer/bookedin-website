@@ -1,0 +1,1828 @@
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Metadata & Favicon -->
+<meta name="google-site-verification" content="g5D5kq-GtDMIdG8HaGV3Pl7KVf5VYrOksRIsw2Hw-YE" />
+<meta name="theme-color" content="#305AE3" />
+<link rel="icon" href="/favicon.ico?v=1" sizes="any" />
+<link rel="shortcut icon" href="/favicon.ico?v=1" />
+<link rel="apple-touch-icon" href="/favicon.ico?v=1" />
+<title>BookedIn - Convert leads into meetings for your clients</title>
+<meta name="description" content="BookedIn automatically reaches out and nurtures leads via Phone, SMS, Whatsapp, Email, and Social Media DMs and turns them into potential customers - under your brand." />
+
+<!-- Complete tracking bundle: GTM, GA4+Ads, Meta Pixel, PostHog, DataFast, VisitorTracking, Funnelytics -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NST253KK');</script>
+
+<!-- Google Analytics 4 + Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3D4MMHNWCL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3D4MMHNWCL');gtag('config','AW-11413017903');</script>
+
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1279721066698447');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1279721066698447&ev=PageView&noscript=1" /></noscript>
+
+<!-- PostHog -->
+<script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))} }(p=t.createElement("script")).type="text/javascript";p.async=!0;p.src=s.api_host+"/static/array.js";(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;void 0!==a?u=e[a]=[]:a="posthog";u.people=u.people||[];o="init capture identify alias people.set people.set_once register register_once".split(" ");for(n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init('phc_1zxwsVgITErpYCkoA9Pzb6cNraIaC1Z0LDnKkxJDedo',{api_host:'https://us.i.posthog.com'});</script>
+
+<!-- DataFast -->
+<script src="https://datafa.st/js/script.js" async data-website-id="dfid_WHG5OWpYj8vvgWbEiRl7C" data-domain="bookedin.ai"></script>
+
+<!-- Visitor Tracking -->
+<script>function init_tracer(){var tracer=new Tracer({websiteId:"d85f88d2-8bc2-4a3a-8940-7d7cdde14eab",async:true,debug:false});}</script>
+<script async src="https://app.visitortracking.com/assets/js/tracer.js"></script>
+
+<!-- Funnelytics -->
+<script>(function(funnel){var deferredEvents=[];window.funnelytics={events:{trigger:function(name,attributes,callback,opts){deferredEvents.push({name:name,attributes:attributes,callback:callback,opts:opts});}}};var insert=document.getElementsByTagName('script')[0],script=document.createElement('script');script.addEventListener('load',function(){window.funnelytics.init(funnel,false,deferredEvents,{});});script.src='https://cdn.funnelytics.io/track-v3.js';script.type='text/javascript';script.async=true;insert.parentNode.insertBefore(script,insert);})('44fc4944-42f6-4964-b257-aeddbc4ee011');</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+* { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; }
+/* Custom scrollbar for clean UI */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+/* Logo styles */
+.logo-grayscale { filter: grayscale(100%) opacity(0.5); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); mix-blend-mode: multiply; }
+.logo-grayscale:hover { filter: grayscale(0%) opacity(1); mix-blend-mode: normal; }
+/* Marquee Animation */
+@keyframes scroll {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+animation: scroll 40s linear infinite;
+width: max-content;
+}
+.animate-scroll:hover {
+animation-play-state: paused;
+}
+/* Fade in animation for toggle content */
+.fade-enter {
+opacity: 0;
+transform: translateY(10px);
+animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes fadeIn {
+to { opacity: 1; transform: translateY(0); }
+}
+/* Solution Tabs Animation */
+.tab-content {
+display: block; /* Show all on mobile */
+margin-bottom: 4rem; /* Spacing between sections on mobile */
+}
+@media (min-width: 768px) {
+.tab-content {
+display: none; /* Hide on desktop by default */
+margin-bottom: 0;
+animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tab-content.active {
+display: block; /* Show active tab on desktop */
+}
+}
+@keyframes slideUpFade {
+from { opacity: 0; transform: translateY(20px) scale(0.98); }
+to { opacity: 1; transform: translateY(0) scale(1); }
+}
+/* Use Case Tabs Animation */
+.use-case-content {
+    display: none;
+    animation: fadeScale 0.4s ease-out forwards;
+}
+.use-case-content.active {
+    display: grid;
+}
+@keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style><link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+<body class="bg-slate-50 text-slate-600 antialiased selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NST253KK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 px-6">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <a href="/" class="flex items-center">
+                            <img src="/bookedin.svg" alt="BookedIn.ai" class="h-8">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center gap-8">
+                        <a href="#" class="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">How It Works</a>
+                        <a href="#features" class="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Who This Is For</a>
+                        <a href="#testimonials" class="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Testimonials</a>
+                        <a href="/tutorials" class="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Tutorials</a>
+                        <a href="https://bookedin.ai/blog" class="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">Blog</a>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="hidden md:flex items-center gap-3">
+                        <a href="/book" class="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors px-4 py-2">Schedule a Demo</a>
+                        <a href="https://dashboard.bookedin.ai/register" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-all">
+                            Get Started
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu text-slate-700"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200">
+                    <div class="py-6 space-y-4">
+                        <a href="#" class="block text-base font-medium text-slate-700 hover:text-blue-600 transition-colors">How It Works</a>
+                        <a href="#features" class="block text-base font-medium text-slate-700 hover:text-blue-600 transition-colors">Who This Is For</a>
+                        <a href="#testimonials" class="block text-base font-medium text-slate-700 hover:text-blue-600 transition-colors">Testimonials</a>
+                        <a href="/tutorials" class="block text-base font-medium text-slate-700 hover:text-blue-600 transition-colors">Tutorials</a>
+                        <a href="https://bookedin.ai/blog" class="block text-base font-medium text-slate-700 hover:text-blue-600 transition-colors">Blog</a>
+                        <div class="pt-4 border-t border-slate-200 space-y-3">
+                            <a href="/book" class="block text-center px-5 py-2.5 rounded-lg border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-slate-50 transition-colors">Schedule a Demo</a>
+                            <a href="https://dashboard.bookedin.ai/register" class="block text-center px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <main class="lg:pt-32 overflow-hidden pt-20 pb-0 relative bg-white">
+        <style>
+            @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+            @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+            @property --gradient-percent { syntax: "<percentage>"; initial-value: 20%; inherits: false; }
+            @property --gradient-shine { syntax: "<color>"; initial-value: #ffffff; inherits: false; }
+            
+            .shiny-cta {
+                --gradient-angle: 0deg;
+                --gradient-angle-offset: 0deg;
+                --gradient-percent: 20%;
+                --gradient-shine: #ffffff;
+                position: relative;
+                overflow: hidden;
+                border-radius: 0.75rem;
+                padding: 0 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                background: linear-gradient(#2563eb, #2563eb) padding-box, 
+                            conic-gradient( from calc(var(--gradient-angle) - var(--gradient-angle-offset)), transparent 0%, #60a5fa 5%, var(--gradient-shine) 15%, #60a5fa 30%, transparent 40%, transparent 100% ) border-box;
+                border: 1px solid transparent;
+                box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -4px rgba(37, 99, 235, 0.2), inset 0 1px 0 0 rgba(255,255,255,0.2);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                cursor: pointer;
+                isolation: isolate;
+                animation: border-spin 2.5s linear infinite;
+            }
+            
+            .shiny-cta:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.3), 0 8px 10px -6px rgba(37, 99, 235, 0.3);
+            }
+            
+            @keyframes border-spin { to { --gradient-angle: 360deg; } }
+            @keyframes shimmer { to { transform: translate(-50%, -50%) rotate(360deg);} }
+            
+            .shiny-cta::before {
+                content: ''; pointer-events: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 0;
+                --size: calc(100% - 10px); --position: 2px; --space: 4px; width: var(--size); height: var(--size);
+                background: radial-gradient(circle at var(--position) var(--position), rgba(255,255,255,0.2) 0.5px, transparent 0) padding-box;
+                background-size: var(--space) var(--space); background-repeat: space;
+                mask-image: conic-gradient( from calc(var(--gradient-angle) + 45deg), black, transparent 10% 90%, black );
+                border-radius: inherit; opacity: 0.4;
+            }
+            
+            .shiny-cta::after {
+                content: ''; pointer-events: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1;
+                width: 100%; aspect-ratio: 1; 
+                background: linear-gradient(-50deg, transparent, #93c5fd, transparent);
+                mask-image: radial-gradient(circle at bottom, transparent 40%, black); opacity: 0.3;
+                animation: shimmer 4s linear infinite;
+            }
+        </style>
+
+        <!-- Ambient Background Glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-50/50 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div class="absolute top-20 right-0 w-[400px] h-[400px] bg-violet-50/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <div class="sm:px-6 lg:px-8 text-center max-w-7xl mr-auto ml-auto pr-4 pl-4">
+            
+            <!-- Eyebrow -->
+            <div class="flex justify-center mb-8">
+                <div class="group relative inline-flex items-center gap-x-2 rounded-full bg-blue-600 px-3 py-1.5 text-sm font-medium text-white shadow-lg shadow-blue-500/30 ring-1 ring-white/10 transition-transform hover:scale-[1.02] cursor-default">
+                    <span class="flex h-2 w-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
+                    Built for Agencies Selling AI Services
+                </div>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="sm:text-6xl lg:text-7xl leading-[1.1] text-5xl font-bold tracking-tight max-w-5xl mr-auto ml-auto pb-4 bg-clip-text text-transparent bg-gradient-to-b from-slate-900 via-slate-900 to-slate-900/10">
+                Build &amp; Monetize <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-b from-blue-600 via-blue-600 to-blue-600/10">AI Sales Reps</span> That Work Leads <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-b from-blue-600 via-blue-600 to-blue-600/10">24/7</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="sm:text-xl leading-relaxed text-lg text-slate-500 max-w-3xl mt-6 mr-auto ml-auto">
+                No-Code platform to build and whitelabel AI agents that Speak, Text, and Email to Automate follow-ups, lead reactivation, and appointment scheduling under your own brand.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://dashboard.bookedin.ai/register" class="shiny-cta w-full sm:w-auto h-14 text-lg font-medium">
+                    <span class="">Get Started</span>
+                </a>
+                <a href="/book" class="hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-center gap-2 group sm:w-auto text-lg font-medium text-slate-700 bg-white w-full h-14 border-slate-200 border rounded-xl pr-8 pl-8">
+                    Book a 1-1 Demo
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 transition-transform group-hover:translate-x-1"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="mt-12 mb-12 flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-sm font-medium text-slate-500">
+                <div class="flex items-center gap-2">
+                    <div class="flex text-amber-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-current"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-current"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-current"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-current"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star h-4 w-4 fill-current"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                    </div>
+                    <span class="text-slate-700">4.9/5 rating</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="flex -space-x-2">
+                        <img src="https://i.pravatar.cc/100?img=1" alt="User" class="h-6 w-6 rounded-full border-2 border-white ring-1 ring-slate-100">
+                        <img src="https://i.pravatar.cc/100?img=8" alt="User" class="h-6 w-6 rounded-full border-2 border-white ring-1 ring-slate-100">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="User" class="h-6 w-6 rounded-full border-2 border-white ring-1 ring-slate-100">
+                    </div>
+                    <span class="text-slate-700 font-medium">2k+ Agents Built</span>
+                </div>
+            </div>
+
+            <!-- Demo Interface Embed -->
+            <div class="max-w-6xl mt-12 mr-auto ml-auto pb-12 relative">
+                <div class="absolute inset-0 bg-blue-600/5 blur-[100px] -z-10 rounded-full h-full w-3/4 mx-auto translate-y-20"></div>
+                <div class="relative rounded-2xl bg-white/40 shadow-2xl shadow-blue-900/5 ring-1 ring-slate-900/5 backdrop-blur-sm overflow-hidden">
+                    <div class="flex h-10 items-center gap-2 px-4 border-b border-slate-200/50 bg-white/50">
+                        <div class="h-3 w-3 rounded-full bg-red-400/60"></div>
+                        <div class="h-3 w-3 rounded-full bg-amber-400/60"></div>
+                        <div class="h-3 w-3 rounded-full bg-emerald-400/60"></div>
+                        <div class="ml-2 text-[10px] font-medium text-slate-400">BookedIn Platform Demo</div>
+                    </div>
+                    <div style="position: relative; box-sizing: content-box; max-height: 80vh; max-height: 80svh; width: 100%; aspect-ratio: 1.78; padding: 0;" class="">
+                        <iframe src="https://app.supademo.com/embed/cmit6la4z3275l821gamks9al?embed_v=2&amp;utm_source=embed" loading="lazy" title="Bookedin ai product walkthrough" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" class=""></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trusted Business Section -->
+            <div class="w-full max-w-6xl mt-12 mb-24 mx-auto">
+                <p class="text-center text-xl sm:text-2xl font-semibold text-slate-900 mb-10 tracking-tight">
+                    Used daily by hundreds of small and large businesses.
+                </p>
+                <div class="relative w-full overflow-hidden group">
+                    <div class="absolute top-0 left-0 z-10 h-full w-24 sm:w-40 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none"></div>
+                    <div class="absolute top-0 right-0 z-10 h-full w-24 sm:w-40 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none"></div>
+                    <div class="flex animate-scroll gap-16 hover:[animation-play-state:paused] w-max pt-4 pb-4 gap-x-16 gap-y-16 items-center">
+                        <img src="assets/image.png" alt="Client Logo 1" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy.png" alt="Client Logo 2" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 2.png" alt="Client Logo 3" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 3.png" alt="Client Logo 4" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 4.png" alt="Client Logo 5" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 5.png" alt="Client Logo 6" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 6.png" alt="Client Logo 7" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 7.png" alt="Client Logo 8" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 8.png" alt="Client Logo 9" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 9.png" alt="Client Logo 10" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 10.png" alt="Client Logo 11" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 11.png" alt="Client Logo 12" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 12.png" alt="Client Logo 13" class="h-10 w-auto logo-grayscale object-contain">
+                        <!-- Duplicate Set for seamless loop -->
+                        <img src="assets/image.png" alt="Client Logo 1" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy.png" alt="Client Logo 2" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 2.png" alt="Client Logo 3" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 3.png" alt="Client Logo 4" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 4.png" alt="Client Logo 5" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 5.png" alt="Client Logo 6" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 6.png" alt="Client Logo 7" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 7.png" alt="Client Logo 8" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 8.png" alt="Client Logo 9" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 9.png" alt="Client Logo 10" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 10.png" alt="Client Logo 11" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 11.png" alt="Client Logo 12" class="h-10 w-auto logo-grayscale object-contain">
+                        <img src="assets/image copy 12.png" alt="Client Logo 13" class="h-10 w-auto logo-grayscale object-contain">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Do You Need BookedIn.ai? -->
+            <div class="mb-32 w-full mx-auto">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.15]">
+                        Why Do You Need BookedIn.ai?
+                    </h2>
+                    <p class="md:text-xl leading-relaxed text-lg font-medium text-slate-500">Because your clients don’t pay you to create fancy workflows they pay you results. If you’re busy stitching together Vapi, Google Sheets, CRMs with n8n and Zapier for every client. How can you ever scale? BookedIn.ai gives you a centralized location to manage your workflows, build reliable agents and deliver and monetize your with 1/10th the effort</p>
+                </div>
+                <div class="relative max-w-5xl mx-auto">
+                    <div class="absolute -top-10 -left-10 w-72 h-72 bg-blue-100/50 rounded-full blur-3xl -z-10 mix-blend-multiply"></div>
+                    <div class="absolute -bottom-10 -right-10 w-72 h-72 bg-violet-100/50 rounded-full blur-3xl -z-10 mix-blend-multiply"></div>
+                    <div class="relative rounded-[3.5rem] overflow-hidden shadow-2xl shadow-slate-200/50 bg-slate-900 aspect-video group cursor-pointer border border-slate-200/20">
+                        <div class="absolute inset-0 z-10 w-full h-full">
+                            <script src="https://fast.wistia.com/player.js" async=""></script>
+                            <script src="https://fast.wistia.com/embed/rvy1frsfzg.js" async="" type="module"></script>
+                            <wistia-player media-id="rvy1frsfzg" class="w-full h-full"></wistia-player>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 text-center max-w-5xl mx-auto px-4 mb-16">
+                    <div class="flex flex-col items-center group">
+                        <span class="text-7xl md:text-8xl font-bold text-slate-900 tracking-tighter mb-4 group-hover:text-blue-600 transition-colors">700%</span>
+                        <div class="flex items-center gap-2 text-slate-900 font-semibold text-lg md:text-xl tracking-tight">
+                            Higher Conversion
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info text-slate-300"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <span class="md:text-8xl group-hover:text-blue-600 transition-colors text-7xl font-bold text-slate-900 tracking-tighter mb-4">42x</span>
+                        <div class="flex items-center gap-2 text-slate-900 font-semibold text-lg md:text-xl tracking-tight">
+                            Faster Building
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info text-slate-300"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <span class="text-7xl md:text-8xl font-bold text-slate-900 tracking-tighter mb-4 group-hover:text-blue-600 transition-colors">300%</span>
+                        <div class="flex items-center gap-2 text-slate-900 font-semibold text-lg md:text-xl tracking-tight">
+                            Better Lead Quality
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info text-slate-300"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOGGLE SECTION -->
+            <section id="features" class="py-24 relative overflow-hidden bg-white border-t border-slate-100">
+                <div class="absolute left-0 top-1/4 h-96 w-96 rounded-full bg-blue-50/50 blur-3xl mix-blend-multiply opacity-70 pointer-events-none"></div>
+                <div class="absolute right-0 bottom-1/4 h-96 w-96 rounded-full bg-violet-50/50 blur-3xl mix-blend-multiply opacity-70 pointer-events-none"></div>
+                <div class="max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
+                    <h2 class="text-4xl md:text-5xl font-bold text-center text-slate-900 tracking-tight mb-12">Who is BookedIn AI for?</h2>
+                    <div class="flex justify-center mb-16">
+                        <div class="bg-slate-100 p-1.5 rounded-full inline-flex items-center relative gap-1 shadow-inner">
+                            <button id="btn-whitelabel" onclick="switchTab('whitelabel')" class="relative rounded-full bg-white px-8 py-3 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-slate-900/5 transition-all duration-200 ease-in-out hover:text-slate-900 z-10 w-48 text-center">
+                                To white label and sell
+                            </button>
+                            <button onclick="switchTab('yourself')" class="hover:text-slate-900 transition-all duration-200 ease-in-out z-10 hover:bg-white/50 text-sm font-medium text-slate-500 text-center w-48 rounded-full pt-3 pr-8 pb-3 pl-8 relative" id="btn-yourself">
+                                For yourself
+                            </button>
+                        </div>
+                    </div>
+                    <div class="max-w-3xl mx-auto bg-white rounded-[2rem] border border-slate-200/60 shadow-xl shadow-slate-200/50 overflow-hidden relative min-h-[500px]">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500 opacity-20"></div>
+                        <div id="content-whitelabel" class="fade-enter p-10 md:p-14">
+                            <div class="mb-8">
+                                <h3 class="text-lg font-semibold text-slate-900 mb-6">If you:</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        </div>
+                                        <p class="text-slate-600 leading-relaxed">Want to sell AI automation but can't code and don't want to hire developers.</p>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        </div>
+                                        <p class="text-slate-600 leading-relaxed">Watch other agencies charge  for AI services while you're stuck selling "consulting".</p>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg>
+                                        </div>
+                                        <p class="text-slate-600 leading-relaxed">Need a proven AI offer that actually works - not another complicated tool you'll never figure out.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-blue-50/50 rounded-xl p-6 border border-blue-100 mb-8">
+                                <h4 class="text-lg font-semibold text-blue-900 mb-2">If the answer is yes, we can instantly fix that for you.</h4>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    Here's what's holding you back: Every client wants AI automation, but building it requires technical skills you don't have. You've tried no-code tools, but they're still too complex. You've considered partnerships, but then you lose control and margins.
+                                </p>
+                                <p class="text-slate-600 leading-relaxed">
+                                    BookedIn is the done-for-you AI system you sell as your own - a complete lead conversion platform that calls, texts, and messages leads automatically until they book appointments. No coding. No complexity. Just pick a template, slap your logo on it, and charge  per client.
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right text-blue-600"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                <span class="text-lg font-bold text-slate-900 italic tracking-tight">Stop trying to build AI. Start selling it.</span>
+                            </div>
+                        </div>
+                        <div id="content-yourself" class="hidden p-10 md:p-14">
+                            <div class="mb-10">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-lg bg-violet-50 flex items-center justify-center border border-violet-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target text-violet-600"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 tracking-tight">The last mile of lead generation</h3>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed mb-4">
+                                    You are great at running Facebook and Google Ads to get leads for your customers, but getting them to actually show up is harder than ever. As an agency, half of the leads you generate for your customers are wasted.
+                                </p>
+                                <p class="text-slate-600 leading-relaxed font-medium">
+                                    Bookedin makes it easy for you to get more leads to actually show up in person or virtually.
+                                </p>
+                            </div>
+                            <div class="mb-10">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-lg bg-violet-50 flex items-center justify-center border border-violet-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap text-violet-600"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 tracking-tight">How do we do it?</h3>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">
+                                    We call every lead within seconds, then follow up via SMS, email, and even Instagram/LinkedIn DMs until they book or opt out.
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-3 pt-6 border-t border-slate-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up text-violet-600 mt-1"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                                <span class="text-lg font-bold text-slate-900 italic tracking-tight leading-tight">Reduce your cost per lead and make more money for your customers than they are spending.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- THE PROBLEM SECTION -->
+            <section class="bg-white border-slate-100 border-t pt-32 pb-32 relative">
+                <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+                    <div class="text-center max-w-3xl mr-auto mb-24 ml-auto">
+                        <h2 class="md:text-5xl leading-[1.15] text-4xl font-semibold text-slate-900 tracking-tight mb-8">The Problem</h2>
+                        <p class="md:text-xl leading-relaxed text-lg font-normal text-slate-500">If you want to implement AI solutions you're forced to stitch together 3-5 separate tools. Each with a massive learning curve. It's a clear bottleneck that eats your time margins and stops you from taking on more clients.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Problem 1: Manual Overload -->
+                        <div class="flex flex-col items-center group">
+                            <div class="relative w-full aspect-square mb-6 rounded-2xl overflow-hidden border-4 border-slate-900 shadow-xl">
+                                <img src="assets/problem/CleanShot 2025-12-05 at 23.07.39@2x.png"
+                                     alt="Overwhelmed with work - person stressed with piles of paperwork"
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">Manual Overload</h3>
+                            <p class="leading-relaxed text-base text-slate-600 text-center">If your team is buried in manual onboarding, debugging workflows, and chasing payments, you're not building a business—you're becoming a freelancer.</p>
+                        </div>
+
+                        <!-- Problem 2: Duct-Taped Tools -->
+                        <div class="flex flex-col items-center group">
+                            <div class="relative w-full aspect-square mb-6 rounded-2xl overflow-hidden border-4 border-slate-900 shadow-xl">
+                                <img src="assets/problem/CleanShot 2025-12-05 at 23.07.55@2x.png"
+                                     alt="The Duct-Taped System - multiple tools connected chaotically"
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">Duct-Taped Tools</h3>
+                            <p class="leading-relaxed text-base text-slate-600 text-center">Juggling separate agent builders, Zapier, billing software, and random CRMs means that when one piece breaks, your entire service collapses.</p>
+                        </div>
+
+                        <!-- Problem 3: Unprofessional Delivery -->
+                        <div class="flex flex-col items-center group">
+                            <div class="relative w-full aspect-square mb-6 rounded-2xl overflow-hidden border-4 border-slate-900 shadow-xl">
+                                <img src="assets/problem/CleanShot 2025-12-05 at 23.08.06@2x.png"
+                                     alt="Unprofessional Delivery - presenting work in makeshift way"
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">Unprofessional Delivery</h3>
+                            <p class="leading-relaxed text-base text-slate-600 text-center">You're delivering valuable work but if you're presenting it in a clunky spreadsheet. Is that really reflective of the level of effort you put in for your clients?</p>
+                        </div>
+                    </div>
+                    <div class="mt-24 w-full h-px bg-slate-100"></div>
+                </div>
+            </section>
+
+            <!-- OUR SOLUTION SECTION (New) -->
+            <section id="solutions" class="overflow-hidden bg-white pt-32 pb-32 relative">
+    <!-- Ambient Background Glows -->
+    <div class="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-[800px] h-[800px] bg-blue-50/50 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-[600px] h-[600px] bg-violet-50/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+    <div class="relative z-10 lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-blue-600 font-semibold tracking-wide text-sm uppercase mb-4 block">Our Solution</span>
+            <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6">One Platform to Build, Deliver, and Monetize</h2>
+            <p class="text-lg text-slate-500 leading-relaxed">Streamline your entire agency operation with a unified system designed for scale.</p>
+        </div>
+
+        <!-- Interactive Tabs -->
+        <div class="max-w-6xl mr-auto ml-auto">
+            <!-- Tab Controls (Hidden on Mobile) -->
+            <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                <button onclick="switchSolutionTab(1)" id="sol-tab-1" class="group flex flex-col items-start p-8 rounded-xl bg-white border-2 border-blue-600 shadow-sm hover:shadow-md transition-all duration-300 text-left relative overflow-hidden">
+                    <div class="absolute inset-0 bg-blue-50/30 opacity-100 transition-opacity duration-300"></div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-3 z-10 relative">Step One</span>
+                    <h3 class="text-xl font-semibold text-slate-900 z-10 relative mb-4">Build</h3>
+                    <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden z-10 relative">
+                        <div class="sol-progress-bar h-full bg-blue-600 w-full transition-all duration-700 ease-out"></div>
+                    </div>
+                </button>
+
+                <button onclick="switchSolutionTab(2)" id="sol-tab-2" class="group flex flex-col items-start p-8 rounded-xl bg-white border-2 border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-300 text-left relative overflow-hidden">
+                    <div class="absolute inset-0 bg-slate-50/50 opacity-0 transition-opacity duration-300"></div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 z-10 relative">Step Two</span>
+                    <h3 class="text-xl font-semibold text-slate-600 z-10 relative mb-4">Automate</h3>
+                    <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden z-10 relative">
+                        <div class="sol-progress-bar h-full bg-blue-600 w-0 transition-all duration-700 ease-out"></div>
+                    </div>
+                </button>
+
+                <button onclick="switchSolutionTab(3)" id="sol-tab-3" class="group flex flex-col items-start p-8 rounded-xl bg-white border-2 border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-300 text-left relative overflow-hidden">
+                    <div class="absolute inset-0 bg-slate-50/50 opacity-0 transition-opacity duration-300"></div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 z-10 relative">Step Three</span>
+                    <h3 class="text-xl font-semibold text-slate-600 z-10 relative mb-4">Deliver</h3>
+                    <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden z-10 relative">
+                        <div class="sol-progress-bar h-full bg-blue-600 w-0 transition-all duration-700 ease-out"></div>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Content Panels -->
+            <div class="relative md:min-h-[500px]">
+                
+                <!-- Tab 1: BUILD -->
+                <div id="sol-content-1" class="tab-content active">
+                    <!-- Mobile Section Header -->
+                    <div class="md:hidden mb-8 pb-6 border-b-2 border-blue-600">
+                        <span class="text-blue-600 font-semibold tracking-wide text-xs uppercase mb-2 block">Step One</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Build</h3>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                        <!-- Left Side: Image Placeholder -->
+                        <div class="relative rounded-[2rem] overflow-hidden bg-slate-100 border border-slate-200/60 shadow-2xl shadow-slate-200/50 aspect-[4/3] group">
+                            <img src="assets/solution/Untitled design/1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="No-Code Builder Interface">
+                            <div class="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[2rem]"></div>
+                        </div>
+
+                        <!-- Right Side: Content -->
+                        <div class="flex flex-col pt-2">
+                            <span class="text-blue-600 font-semibold tracking-wide text-sm uppercase mb-5">Build</span>
+                            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">No-Code Agent Builder</h2>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-10">Stop starting from scratch. Visually build and test expert-level voice and chat agents in minutes.</p>
+                            
+                            <div class="w-full h-px bg-slate-200 mb-10"></div>
+                            
+                            <div class="space-y-10">
+                                <div class="flex gap-5">
+                                    <div class="flex-shrink-0 mt-1 text-slate-900">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                                    </div>
+                                    <div class="">
+                                        <h3 class="text-lg font-semibold text-slate-900 mb-2">Pre-Built Agent Tools</h3>
+                                        <p class="text-slate-500 leading-relaxed">Instantly connect agents to appointment booking tools for Google Calendar, Calendly, and more. No custom code or API wrangling required.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5">
+                                    <div class="flex-shrink-0 mt-1 text-slate-900">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line></svg>
+                                    </div>
+                                    <div class="">
+                                        <h3 class="text-lg font-semibold text-slate-900 mb-2">Total Control, No-Code Speed</h3>
+                                        <p class="text-slate-500 leading-relaxed">Use our drag-and-drop visual builder to map complex logic, or generate powerful prompts with natural language.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: AUTOMATE -->
+                <div id="sol-content-2" class="tab-content">
+                    <!-- Mobile Section Header -->
+                    <div class="md:hidden mb-8 pb-6 border-b-2 border-blue-600">
+                        <span class="text-blue-600 font-semibold tracking-wide text-xs uppercase mb-2 block">Step Two</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Automate</h3>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                        <!-- Left Side: Image Placeholder -->
+                        <div class="relative rounded-[2rem] overflow-hidden bg-slate-100 border border-slate-200/60 shadow-2xl shadow-slate-200/50 aspect-[4/3] group">
+                            <img src="assets/solution/Untitled design/2.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Workflow Builder">
+                            <div class="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[2rem]"></div>
+                        </div>
+
+                        <!-- Right Side: Content -->
+                        <div class="flex flex-col pt-2">
+                            <span class="text-blue-600 font-semibold tracking-wide text-sm uppercase mb-5">Automate</span>
+                            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">Visual Workflow Builder</h2>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-10">Connect your agents to any app and automate your services—all in one place. Our workflow engine is built for security, reliability, and speed.</p>
+                            
+                            <div class="w-full h-px bg-slate-200 mb-10"></div>
+                            
+                            <div class="space-y-10">
+                                <div class="flex gap-5">
+                                    <div class="flex-shrink-0 mt-1 text-slate-900">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-slate-900 mb-2">Eliminate Fragmented Stacks</h3>
+                                        <p class="text-slate-500 leading-relaxed">Replace Zapier, Make, and CRMs with one integrated platform. Stop paying for 5 different subscriptions to do one job.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5">
+                                    <div class="flex-shrink-0 mt-1 text-slate-900">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-slate-900 mb-2">Native Agent Triggers</h3>
+                                        <p class="text-slate-500 leading-relaxed">Instantly run workflows from agent events like "call-ended" or "call-started." No unreliable webhooks or complex setups needed.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: DELIVER -->
+                <div id="sol-content-3" class="tab-content">
+                    <!-- Mobile Section Header -->
+                    <div class="md:hidden mb-8 pb-6 border-b-2 border-blue-600">
+                        <span class="text-blue-600 font-semibold tracking-wide text-xs uppercase mb-2 block">Step Three</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Deliver</h3>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                        <!-- Left Side: Image Placeholder -->
+                        <div class="relative rounded-[2rem] overflow-hidden bg-slate-100 border border-slate-200/60 shadow-2xl shadow-slate-200/50 aspect-[4/3] group">
+                            <img src="assets/solution/Untitled design/3.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Analytics Dashboard">
+                            <div class="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[2rem]"></div>
+                        </div>
+
+                        <!-- Right Side: Content -->
+                        <div class="flex flex-col pt-2">
+                            <span class="text-emerald-600 font-semibold tracking-wide text-sm uppercase mb-5">Deliver</span>
+                            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">Whitelabel Client Portal</h2>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-10">Give your clients a professional, branded dashboard. They see your logo, your colors, and the results you're delivering—real-time.</p>
+
+                            <div class="w-full h-px bg-slate-200 mb-10"></div>
+
+                            <div class="space-y-10">
+                                <div class="flex gap-5">
+                                    <div class="flex-shrink-0 mt-1 text-slate-900">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-slate-900 mb-2">Unified Inbox</h3>
+                                        <p class="text-slate-500 leading-relaxed">Manage all client communications in one place. Never miss a message across calls, texts, and emails—all centralized for your team.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5">
+                                    <div class="flex-shrink-0 mt-1 text-slate-900">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-big"><path d="M3 3v18h18"></path><rect width="4" height="7" x="7" y="10" rx="1"></rect><rect width="4" height="12" x="15" y="5" rx="1"></rect></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-slate-900 mb-2">Analytics That Directly Attribute ROI</h3>
+                                        <p class="text-slate-500 leading-relaxed">Show clients exactly what you bring to the table. Track calls, appointments booked, and revenue generated—making your service sticky and indispensable.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- USE CASES SECTION (NEW) -->
+<section id="use-cases" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center max-w-4xl mx-auto mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">Some things agencies are using BookedIn.ai for</h2>
+            <p class="text-lg text-slate-600">Click on each card to explore different use cases</p>
+        </div>
+
+        <!-- Use Case Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+
+            <!-- Card 1: AI Scheduler -->
+            <div onclick="toggleUseCase(0)" class="uc-card group cursor-pointer bg-white border-2 border-slate-200 rounded-2xl p-6 hover:border-blue-500 hover:shadow-xl transition-all duration-300" data-index="0">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-500 transition-colors shadow-md flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-blue-500 group-hover:text-white transition-colors fill-current"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 group-hover:text-blue-600 transition-all group-hover:translate-x-1 flex-shrink-0"><path d="m9 18 6-6-6-6"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">AI Scheduler</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Book all appointments automatically with real-time scheduling and instant confirmations.</p>
+            </div>
+
+            <!-- Card 2: Sales AI -->
+            <div onclick="toggleUseCase(1)" class="uc-card group cursor-pointer bg-white border-2 border-slate-200 rounded-2xl p-6 hover:border-blue-500 hover:shadow-xl transition-all duration-300" data-index="1">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center group-hover:bg-emerald-500 transition-colors shadow-md flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-emerald-500 group-hover:text-white transition-colors fill-current"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 group-hover:text-blue-600 transition-all group-hover:translate-x-1 flex-shrink-0"><path d="m9 18 6-6-6-6"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Sales AI</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Capture every lead with instant engagement and intelligent inventory knowledge.</p>
+            </div>
+
+            <!-- Card 3: Outbound -->
+            <div onclick="toggleUseCase(2)" class="uc-card group cursor-pointer bg-white border-2 border-slate-200 rounded-2xl p-6 hover:border-blue-500 hover:shadow-xl transition-all duration-300" data-index="2">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-500 transition-colors shadow-md flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-cyan-500 group-hover:text-white transition-colors fill-current"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 group-hover:text-blue-600 transition-all group-hover:translate-x-1 flex-shrink-0"><path d="m9 18 6-6-6-6"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Outbound Campaigns</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Reach more customers with automated campaigns and database reactivation.</p>
+            </div>
+
+            <!-- Card 4: Abandoned Carts -->
+            <div onclick="toggleUseCase(3)" class="uc-card group cursor-pointer bg-white border-2 border-slate-200 rounded-2xl p-6 hover:border-blue-500 hover:shadow-xl transition-all duration-300" data-index="3">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center group-hover:bg-amber-500 transition-colors shadow-md flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-amber-500 group-hover:text-white transition-colors fill-current"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 group-hover:text-blue-600 transition-all group-hover:translate-x-1 flex-shrink-0"><path d="m9 18 6-6-6-6"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Abandoned Carts</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Recover lost revenue with instant follow-ups and incentive delivery.</p>
+            </div>
+
+            <!-- Card 5: Event Reminders -->
+            <div onclick="toggleUseCase(4)" class="uc-card group cursor-pointer bg-white border-2 border-slate-200 rounded-2xl p-6 hover:border-blue-500 hover:shadow-xl transition-all duration-300" data-index="4">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center group-hover:bg-pink-500 transition-colors shadow-md flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-pink-500 group-hover:text-white transition-colors fill-current"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 group-hover:text-blue-600 transition-all group-hover:translate-x-1 flex-shrink-0"><path d="m9 18 6-6-6-6"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Event Reminders</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Drastically reduce no-shows with proactive confirmations and smart rescheduling.</p>
+            </div>
+
+            <!-- Card 6: Unified Inbox -->
+            <div onclick="toggleUseCase(5)" class="uc-card group cursor-pointer bg-white border-2 border-slate-200 rounded-2xl p-6 hover:border-blue-500 hover:shadow-xl transition-all duration-300" data-index="5">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-violet-50 flex items-center justify-center group-hover:bg-violet-500 transition-colors shadow-md flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="text-violet-500 group-hover:text-white transition-colors fill-current"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 group-hover:text-blue-600 transition-all group-hover:translate-x-1 flex-shrink-0"><path d="m9 18 6-6-6-6"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Unified Inbox</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Stay on top of every customer with centralized command and smart flags.</p>
+            </div>
+        </div>
+
+        <!-- Expanded Content Area -->
+        <div id="expanded-content" class="hidden mt-8">
+            <!-- AI Scheduler Content -->
+            <div class="use-case-detail hidden bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-3xl p-8 md:p-12" id="detail-0">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="inline-block px-4 py-1.5 bg-blue-600 text-white text-xs font-semibold rounded-full mb-4">AI SCHEDULER</span>
+                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Book all appointments</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 pb-4 border-b border-blue-200">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Real-time scheduling</h4>
+                                    <p class="text-slate-600 text-sm">BookedIn connects directly to your service scheduler, booking customers 24/7 and filling your calendar without added staff.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 pb-4 border-b border-blue-200">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Intelligent Mapping</h4>
+                                    <p class="text-slate-600 text-sm">Maps customer issues and needs to the right appointment duration automatically.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Instant Confirmations</h4>
+                                    <p class="text-slate-600 text-sm">Sends text confirmations to reduce no-shows and keep your revenue predictable.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 space-y-4">
+                            <div class="flex justify-end">
+                                <div class="bg-blue-100 text-blue-900 px-4 py-3 rounded-2xl rounded-tr-sm max-w-[80%] text-sm">
+                                    I need to book a consultation for next Tuesday.
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-slate-100 text-slate-800 px-4 py-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm">
+                                    I can help with that. I have openings at 10:00 AM and 2:00 PM on Tuesday. Which works better for you?
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-blue-100 text-blue-900 px-4 py-3 rounded-2xl rounded-tr-sm max-w-[80%] text-sm">
+                                    Let's go with 2:00 PM.
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-slate-100 text-slate-800 px-4 py-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm">
+                                    Perfect. I've booked you for 2:00 PM next Tuesday. You'll receive a confirmation text shortly.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales AI Content -->
+            <div class="use-case-detail hidden bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 rounded-3xl p-8 md:p-12" id="detail-1">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="inline-block px-4 py-1.5 bg-emerald-500 text-white text-xs font-semibold rounded-full mb-4">SALES AI</span>
+                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Capture every lead</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 pb-4 border-b border-emerald-200">
+                                <div class="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Instant Engagement</h4>
+                                    <p class="text-slate-600 text-sm">Engages sales leads in real time, answering questions instantly to bring more customers to your pipeline.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 pb-4 border-b border-emerald-200">
+                                <div class="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Inventory Knowledge</h4>
+                                    <p class="text-slate-600 text-sm">Shares service or product availability straight from your database.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Books Meetings</h4>
+                                    <p class="text-slate-600 text-sm">Answers questions about features and options, then books a demo or sales call instantly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 space-y-4">
+                            <div class="flex justify-end">
+                                <div class="bg-emerald-100 text-emerald-900 px-4 py-3 rounded-2xl rounded-tr-sm max-w-[80%] text-sm">
+                                    Do you have the Premium Plan in stock?
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-slate-100 text-slate-800 px-4 py-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm">
+                                    Yes, the Premium Plan is available immediately. It includes all AI features and 24/7 support. Would you like a demo?
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-emerald-100 text-emerald-900 px-4 py-3 rounded-2xl rounded-tr-sm max-w-[80%] text-sm">
+                                    That sounds great.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outbound Content -->
+            <div class="use-case-detail hidden bg-gradient-to-br from-cyan-50 to-white border-2 border-cyan-200 rounded-3xl p-8 md:p-12" id="detail-2">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="inline-block px-4 py-1.5 bg-cyan-500 text-white text-xs font-semibold rounded-full mb-4">OUTBOUND CAMPAIGNS</span>
+                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Reach more customers</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 pb-4 border-b border-cyan-200">
+                                <div class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Database Reactivation</h4>
+                                    <p class="text-slate-600 text-sm">BookedIn runs outbound campaigns that keep customers coming back and service bays full.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 pb-4 border-b border-cyan-200">
+                                <div class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Perfect Delivery</h4>
+                                    <p class="text-slate-600 text-sm">Calls customers 24/7 and ensures every message is delivered professionally.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Revenue Generation</h4>
+                                    <p class="text-slate-600 text-sm">Executes recall, retention, and marketing campaigns automatically to drive net new revenue.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+                            <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                                <span class="text-xs font-semibold uppercase tracking-wide text-slate-500">Campaign Stats</span>
+                                <span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">Active</span>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-end mb-2">
+                                    <span class="text-3xl font-bold text-slate-900">1,240</span>
+                                    <span class="text-sm font-medium text-green-600 mb-1">98% Success</span>
+                                </div>
+                                <span class="text-sm text-slate-500 block mb-6">Calls Completed</span>
+                                <div class="flex justify-between items-end mb-2">
+                                    <span class="text-3xl font-bold text-slate-900">342</span>
+                                    <span class="text-sm font-medium text-cyan-600 mb-1">27% Conversion</span>
+                                </div>
+                                <span class="text-sm text-slate-500">Appointments Booked</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abandoned Carts Content -->
+            <div class="use-case-detail hidden bg-gradient-to-br from-amber-50 to-white border-2 border-amber-200 rounded-3xl p-8 md:p-12" id="detail-3">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-semibold rounded-full mb-4">ABANDONED CARTS</span>
+                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Recover lost revenue</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 pb-4 border-b border-amber-200">
+                                <div class="w-6 h-6 rounded-full bg-amber-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Instant Follow-up</h4>
+                                    <p class="text-slate-600 text-sm">When people abandon the cart but we have their information, AI calls them and texts them within minutes.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 pb-4 border-b border-amber-200">
+                                <div class="w-6 h-6 rounded-full bg-amber-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Incentive Delivery</h4>
+                                    <p class="text-slate-600 text-sm">Automatically offer a discount code or answer questions to help you recapture the client.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-amber-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Multi-Channel</h4>
+                                    <p class="text-slate-600 text-sm">Uses SMS and Voice simultaneously to maximize contact rates.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 space-y-4">
+                            <div class="flex justify-start">
+                                <div class="bg-slate-100 text-slate-800 px-4 py-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm">
+                                    Hi John, I noticed you left some items in your cart. Was there anything I could help clarify?
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="bg-amber-100 text-amber-900 px-4 py-3 rounded-2xl rounded-tr-sm max-w-[80%] text-sm">
+                                    I wasn't sure about the shipping time.
+                                </div>
+                            </div>
+                            <div class="flex justify-start">
+                                <div class="bg-slate-100 text-slate-800 px-4 py-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm">
+                                    We ship within 24 hours! Here is a 10% code to complete your order today: SAVE10.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Reminders Content -->
+            <div class="use-case-detail hidden bg-gradient-to-br from-pink-50 to-white border-2 border-pink-200 rounded-3xl p-8 md:p-12" id="detail-4">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="inline-block px-4 py-1.5 bg-pink-600 text-white text-xs font-semibold rounded-full mb-4">EVENT REMINDERS</span>
+                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Drastically reduce no-shows</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 pb-4 border-b border-pink-200">
+                                <div class="w-6 h-6 rounded-full bg-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Proactive Confirmation</h4>
+                                    <p class="text-slate-600 text-sm">Calls prospects automatically to remind them about their upcoming meeting.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 pb-4 border-b border-pink-200">
+                                <div class="w-6 h-6 rounded-full bg-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Seamless Links</h4>
+                                    <p class="text-slate-600 text-sm">Texts meeting links (Zoom, Google Meet) directly to their phone 15 minutes prior.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-pink-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Smart Rescheduling</h4>
+                                    <p class="text-slate-600 text-sm">If they can't make it, the agent handles the rescheduling instantly via Calendly integration.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="flex flex-col gap-4">
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-md flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-semibold text-slate-900">Reminder Call</div>
+                                    <div class="text-xs text-slate-500">Completed • 24s</div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-md flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-semibold text-slate-900">Meeting Link Sent</div>
+                                    <div class="text-xs text-slate-500">Delivered • SMS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unified Inbox Content -->
+            <div class="use-case-detail hidden bg-gradient-to-br from-violet-50 to-white border-2 border-violet-200 rounded-3xl p-8 md:p-12" id="detail-5">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="inline-block px-4 py-1.5 bg-violet-600 text-white text-xs font-semibold rounded-full mb-4">UNIFIED INBOX</span>
+                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Stay on top of every customer</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 pb-4 border-b border-violet-200">
+                                <div class="w-6 h-6 rounded-full bg-violet-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Centralized Command</h4>
+                                    <p class="text-slate-600 text-sm">BookedIn gives you one place to see every call, message, and alert so nothing slips through the cracks.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 pb-4 border-b border-violet-200">
+                                <div class="w-6 h-6 rounded-full bg-violet-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Smart Flags</h4>
+                                    <p class="text-slate-600 text-sm">Flags unresolved calls, drop-offs, and frustrated customers in real time.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-violet-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-900 mb-1">Custom Alerts</h4>
+                                    <p class="text-slate-600 text-sm">Tracks open requests and lets you choose how alerts are delivered (dashboard, email, slack).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+                            <div class="bg-slate-50 p-4 border-b border-slate-200 flex justify-between items-center">
+                                <span class="font-semibold text-slate-700">Priority Inbox</span>
+                                <span class="bg-red-100 text-red-700 text-xs px-2 py-0.5 rounded-full">3 Urgent</span>
+                            </div>
+                            <div class="divide-y divide-slate-100">
+                                <div class="p-4 hover:bg-slate-50 transition-colors cursor-pointer">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-medium text-slate-900">Sarah M.</span>
+                                        <span class="text-xs text-slate-400">2m ago</span>
+                                    </div>
+                                    <div class="text-sm text-slate-500 truncate">Missed call • Needs rescheduling</div>
+                                </div>
+                                <div class="p-4 hover:bg-slate-50 transition-colors cursor-pointer border-l-2 border-red-500 bg-red-50/10">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-medium text-slate-900">Mike R.</span>
+                                        <span class="text-xs text-slate-400">15m ago</span>
+                                    </div>
+                                    <div class="text-sm text-slate-800 font-medium truncate">Negative Sentiment Detected</div>
+                                </div>
+                                <div class="p-4 hover:bg-slate-50 transition-colors cursor-pointer">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-medium text-slate-900">Alex T.</span>
+                                        <span class="text-xs text-slate-400">1h ago</span>
+                                    </div>
+                                    <div class="text-sm text-slate-500 truncate">Demo booked for Friday</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Real Results from Real Clients</h2>
+            <p class="text-base text-slate-600">See what our clients are saying about BookedIn.ai and the results they're achieving</p>
+        </div>
+
+        <!-- Testimonial Video Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <!-- Testimonial 1 - Nehemiah -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all">
+                <div class="flex items-center gap-0.5 px-4 pt-4 pb-2">
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="relative aspect-video bg-slate-100 rounded-lg overflow-hidden mb-4">
+                        <iframe
+                            src="https://www.youtube.com/embed/z4PWdrWDWts"
+                            title="Nehemiah Testimonial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-4 leading-relaxed">You guys implemented a well oiled machine and you are still adding new features.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-semibold text-sm">N</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-slate-900 text-sm">Nehemiah</h4>
+                            <p class="text-xs text-slate-500">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 - Cary -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all">
+                <div class="flex items-center gap-0.5 px-4 pt-4 pb-2">
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="relative aspect-video bg-slate-100 rounded-lg overflow-hidden mb-4">
+                        <iframe
+                            src="https://www.youtube.com/embed/N64ed7LFglU"
+                            title="Cary Testimonial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-4 leading-relaxed">Saved 3 days out of his whole week using this AI System</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-semibold text-sm">C</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-slate-900 text-sm">Cary</h4>
+                            <p class="text-xs text-slate-500">Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 - Jim -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all">
+                <div class="flex items-center gap-0.5 px-4 pt-4 pb-2">
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="relative aspect-video bg-slate-100 rounded-lg overflow-hidden mb-4">
+                        <iframe
+                            src="https://www.youtube.com/embed/L9lxcrVrl-4"
+                            title="Jim Testimonial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-4 leading-relaxed">Anything I needed, your team was there. The quality of the system is exceptional.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-semibold text-sm">J</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-slate-900 text-sm">Jim</h4>
+                            <p class="text-xs text-slate-500">Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 4 - Dini -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all">
+                <div class="flex items-center gap-0.5 px-4 pt-4 pb-2">
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="relative aspect-video bg-slate-100 rounded-lg overflow-hidden mb-4">
+                        <iframe
+                            src="https://www.youtube.com/embed/5Ny-1ElxD14"
+                            title="Dini Testimonial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-4 leading-relaxed">This shit is f**king fire.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-semibold text-sm">D</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-slate-900 text-sm">Dini</h4>
+                            <p class="text-xs text-slate-500">User</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Testimonial 5 - Jahan -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all">
+                <div class="flex items-center gap-0.5 px-4 pt-4 pb-2">
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="relative aspect-video bg-slate-100 rounded-lg overflow-hidden mb-4">
+                        <iframe
+                            src="https://www.youtube.com/embed/5yURZXh7NBc"
+                            title="Jahan Testimonial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-4 leading-relaxed">I've seen everything in the market and by far, but no question about it. There's not even close comparison to a second best.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-semibold text-sm">J</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-slate-900 text-sm">Jahan</h4>
+                            <p class="text-xs text-slate-500">Industry Expert</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 6 - Adam -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all">
+                <div class="flex items-center gap-0.5 px-4 pt-4 pb-2">
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="relative aspect-video bg-slate-100 rounded-lg overflow-hidden mb-4">
+                        <iframe
+                            src="https://www.youtube.com/embed/rq9FNr2O8_I"
+                            title="Adam Testimonial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-4 leading-relaxed">He literally gives you the plan on what to do - it's not that hard. I got a little emotional because if I had that information I would have been way ahead.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-semibold text-sm">A</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-slate-900 text-sm">Adam</h4>
+                            <p class="text-xs text-slate-500">Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 7 - Jamie -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all">
+                <div class="flex items-center gap-0.5 px-4 pt-4 pb-2">
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="relative aspect-video bg-slate-100 rounded-lg overflow-hidden mb-4">
+                        <iframe
+                            src="https://www.youtube.com/embed/MpXSq9yf10M"
+                            title="Jamie Testimonial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-4 leading-relaxed">Helped us develop agents in days. For someone like myself who is not very technical they go out of their way to explain it in a way that helps me understand.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-semibold text-sm">J</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-slate-900 text-sm">Jamie</h4>
+                            <p class="text-xs text-slate-500">Non-Technical User</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 8 - Andrew -->
+            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all">
+                <div class="flex items-center gap-0.5 px-4 pt-4 pb-2">
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                    <span class="text-yellow-400 text-lg">⭐</span>
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="relative aspect-video bg-slate-100 rounded-lg overflow-hidden mb-4">
+                        <iframe
+                            src="https://www.youtube.com/embed/x3RCe4Xefdg"
+                            title="Andrew Testimonial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-4 leading-relaxed">I went from zero to $15K a month using the software.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-semibold text-sm">A</div>
+                        <div class="text-left">
+                            <h4 class="font-semibold text-slate-900 text-sm">Andrew</h4>
+                            <p class="text-xs text-slate-500">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-32 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-5xl md:text-6xl font-bold text-slate-900 tracking-tight mb-6">Choose Your Plan</h2>
+            <p class="text-lg text-slate-500 leading-relaxed">Get started with BookedIn.ai and transform your lead conversion process</p>
+        </div>
+
+        <!-- Billing Toggle -->
+        <div class="flex justify-center items-center gap-3 mb-16">
+            <span class="text-sm font-medium text-slate-700">Annual billing</span>
+            <button class="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-200 transition-colors">
+                <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1 shadow-sm"></span>
+            </button>
+            <span class="text-sm font-medium text-blue-600">(Save 20%)</span>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <!-- Starter Plan -->
+            <div class="bg-white rounded-2xl border-2 border-slate-200 p-8 hover:shadow-lg transition-all">
+                <div class="text-center mb-6">
+                    <h3 class="text-lg font-semibold text-slate-700 mb-6">Starter</h3>
+                    <div class="mb-2">
+                        <span class="text-5xl font-bold text-slate-900">$97</span>
+                        <span class="text-slate-500 text-lg">/ month</span>
+                    </div>
+                    <p class="text-sm text-slate-500">billed monthly</p>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Full Platform Access</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Group Coaching and Consulting</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">2 AI Agents</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Community Support</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Email & SMS Automation</span>
+                    </li>
+                </ul>
+                <a href="https://dashboard.bookedin.ai/register" class="block w-full text-center px-6 py-3.5 rounded-lg border-2 border-slate-900 text-slate-900 font-semibold hover:bg-slate-50 transition-colors">
+                    Get Started
+                </a>
+                <p class="text-center text-xs text-slate-500 mt-4">Perfect for getting started with AI automation</p>
+            </div>
+
+            <!-- Professional Plan -->
+            <div class="bg-white rounded-2xl border-2 border-slate-200 p-8 hover:shadow-lg transition-all">
+                <div class="text-center mb-6">
+                    <h3 class="text-lg font-semibold text-slate-700 mb-6">Professional</h3>
+                    <div class="mb-2">
+                        <span class="text-5xl font-bold text-slate-900">$297</span>
+                        <span class="text-slate-500 text-lg">/ month</span>
+                    </div>
+                    <p class="text-sm text-slate-500">billed monthly</p>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Everything in Starter</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">5 AI Agents</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Priority Support</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Advanced Analytics</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Custom Integrations</span>
+                    </li>
+                </ul>
+                <a href="https://dashboard.bookedin.ai/register" class="block w-full text-center px-6 py-3.5 rounded-lg border-2 border-slate-900 text-slate-900 font-semibold hover:bg-slate-50 transition-colors">
+                    Get Started
+                </a>
+                <p class="text-center text-xs text-slate-500 mt-4">For growing businesses scaling their operations</p>
+            </div>
+
+            <!-- Agency Plan (Featured) -->
+            <div class="bg-white rounded-2xl border-2 border-blue-600 p-8 hover:shadow-xl transition-all relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full">
+                    ⭐ Popular
+                </div>
+                <div class="text-center mb-6">
+                    <h3 class="text-lg font-semibold text-slate-700 mb-6">Agency</h3>
+                    <div class="mb-2">
+                        <span class="text-5xl font-bold text-slate-900">$497</span>
+                        <span class="text-slate-500 text-lg">/ month</span>
+                    </div>
+                    <p class="text-sm text-slate-500">billed monthly</p>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Everything in Professional</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Unlimited AI Agents</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">White Label Rights</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Priority 1-1 Support</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-slate-900 flex-shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"></path></svg>
+                        <span class="text-slate-700 text-sm">Advanced Automation Features</span>
+                    </li>
+                </ul>
+                <a href="https://dashboard.bookedin.ai/register" class="block w-full text-center px-6 py-3.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow-lg">
+                    Get Started
+                </a>
+                <p class="text-center text-xs text-slate-500 mt-4">Ideal for agencies wanting to resell AI services</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+    </main>
+
+<!-- CTA Section -->
+<section class="relative py-32 bg-[#0f172a] overflow-hidden w-full">
+    <!-- Starry Background Pattern -->
+    <div class="absolute inset-0 w-full h-full">
+        <div class="absolute h-full w-full bg-[radial-gradient(#ffffff22_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
+        <style>
+            .stars-bg {
+                background-image:
+                    radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+                    radial-gradient(1px 1px at 100px 70px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0,0,0,0)),
+                    radial-gradient(1.5px 1.5px at 200px 10px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(1.5px 1.5px at 260px 200px, #fff, rgba(0,0,0,0));
+                background-size: 350px 350px;
+                animation: twinkle 60s infinite linear;
+            }
+            @keyframes twinkle {
+                from { background-position: 0 0; }
+                to { background-position: -350px -350px; }
+            }
+        </style>
+        <div class="absolute inset-0 stars-bg opacity-40"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-5xl md:text-6xl font-bold tracking-tight text-white mb-8">
+            Start transforming your agency
+        </h2>
+        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
+            Unlock the potential of your business with our next-level SaaS platform. Transform your workflows and achieve new heights today.
+        </p>
+        <div class="flex justify-center">
+            <a href="https://dashboard.bookedin.ai/register" class="group relative inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-slate-900 transition-all duration-300 hover:bg-slate-100 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                Get started
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right transition-transform group-hover:translate-x-1"><path d="m9 18 6-6-6-6"></path></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f172a] text-slate-300 pt-20 pb-10 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <!-- Brand Column -->
+                <div class="lg:col-span-2">
+                    <div class="mb-6">
+                        <img src="/bookedin.svg" alt="BookedIn.ai" class="h-8 brightness-0 invert">
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6 max-w-sm">
+                        Build and monetize AI sales reps that work leads 24/7. The complete platform for agencies selling AI services.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-slate-300"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-slate-300"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-slate-300"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Column -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Product</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-slate-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#solutions" class="text-slate-400 hover:text-white transition-colors">Solutions</a></li>
+                        <li><a href="#use-cases" class="text-slate-400 hover:text-white transition-colors">Use Cases</a></li>
+                        <li><a href="#pricing" class="text-slate-400 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="https://bookedin.ai/blog" class="text-slate-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-slate-700/50 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">
+                    © 2024 BookedIn.ai. All rights reserved.
+                </p>
+                <div class="flex items-center gap-6 text-sm">
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        function switchTab(tab) {
+            const btn1 = document.getElementById('btn-whitelabel');
+            const btn2 = document.getElementById('btn-yourself');
+            const content1 = document.getElementById('content-whitelabel');
+            const content2 = document.getElementById('content-yourself');
+
+            const activeBtnClass = "relative rounded-full bg-white px-8 py-3 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-slate-900/5 transition-all duration-200 ease-in-out hover:text-slate-900 z-10 w-48 text-center";
+            const inactiveBtnClass = "relative rounded-full px-8 py-3 text-sm font-medium text-slate-500 hover:text-slate-900 transition-all duration-200 ease-in-out z-10 w-48 text-center hover:bg-white/50";
+
+            if(tab === 'whitelabel') {
+                btn1.className = activeBtnClass;
+                btn2.className = inactiveBtnClass;
+                content1.classList.remove('hidden');
+                content1.classList.add('fade-enter');
+                content2.classList.add('hidden');
+                content2.classList.remove('fade-enter');
+            } else {
+                btn2.className = activeBtnClass;
+                btn1.className = inactiveBtnClass;
+                content2.classList.remove('hidden');
+                content2.classList.add('fade-enter');
+                content1.classList.add('hidden');
+                content1.classList.remove('fade-enter');
+            }
+        }
+
+        function switchSolutionTab(step) {
+            // Reset all tabs styling
+            for(let i=1; i<=3; i++) {
+                const btn = document.getElementById(`sol-tab-${i}`);
+                const content = document.getElementById(`sol-content-${i}`);
+                const progressBar = btn.querySelector('.sol-progress-bar');
+                const bgOverlay = btn.querySelector('.absolute');
+                const stepLabel = btn.querySelector('span');
+                const stepTitle = btn.querySelector('h3');
+
+                // Content Visibility
+                if(i === step) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+
+                // Button Styling
+                if(i === step) {
+                    // Active State
+                    btn.classList.remove('border-slate-200');
+                    btn.classList.add('border-blue-600');
+                    bgOverlay.classList.remove('opacity-0', 'bg-slate-50/50');
+                    bgOverlay.classList.add('opacity-100', 'bg-blue-50/30');
+                    stepLabel.classList.remove('text-slate-400');
+                    stepLabel.classList.add('text-blue-600');
+                    stepTitle.classList.remove('text-slate-600');
+                    stepTitle.classList.add('text-slate-900');
+                    // Animate progress bar to full
+                    progressBar.classList.remove('w-0');
+                    progressBar.classList.add('w-full');
+                } else {
+                    // Inactive State
+                    btn.classList.add('border-slate-200');
+                    btn.classList.remove('border-blue-600');
+                    bgOverlay.classList.add('opacity-0', 'bg-slate-50/50');
+                    bgOverlay.classList.remove('opacity-100', 'bg-blue-50/30');
+                    stepLabel.classList.add('text-slate-400');
+                    stepLabel.classList.remove('text-blue-600');
+                    stepTitle.classList.add('text-slate-600');
+                    stepTitle.classList.remove('text-slate-900');
+                    // Reset progress bar
+                    progressBar.classList.add('w-0');
+                    progressBar.classList.remove('w-full');
+                }
+            }
+        }
+
+        let currentOpenDetail = null;
+
+        function toggleUseCase(index) {
+            const expandedContent = document.getElementById('expanded-content');
+            const detailToShow = document.getElementById(`detail-${index}`);
+            const cards = document.querySelectorAll('.uc-card');
+
+            // If clicking the same card that's already open, close it
+            if (currentOpenDetail === index) {
+                expandedContent.classList.add('hidden');
+                detailToShow.classList.add('hidden');
+                cards.forEach(card => {
+                    card.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-50');
+                });
+                currentOpenDetail = null;
+                return;
+            }
+
+            // Hide all details
+            document.querySelectorAll('.use-case-detail').forEach(detail => {
+                detail.classList.add('hidden');
+            });
+
+            // Remove active state from all cards
+            cards.forEach(card => {
+                card.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-50');
+            });
+
+            // Show the expanded content area
+            expandedContent.classList.remove('hidden');
+
+            // Show the selected detail
+            detailToShow.classList.remove('hidden');
+
+            // Highlight the selected card
+            const selectedCard = document.querySelector(`.uc-card[data-index="${index}"]`);
+            if (selectedCard) {
+                selectedCard.classList.add('ring-2', 'ring-blue-500', 'bg-blue-50');
+            }
+
+            // Update current open detail
+            currentOpenDetail = index;
+
+            // Smooth scroll to the expanded content
+            setTimeout(() => {
+                expandedContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+    </script>
+
+</body></html>
