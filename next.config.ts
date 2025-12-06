@@ -4,14 +4,14 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path*',
+        source: '/',
         has: [
           {
             type: 'host',
             value: 'bookedin.ai',
           },
         ],
-        destination: 'https://bookedinai.com/:path*',
+        destination: 'https://bookedinai.com',
         permanent: true,
       },
     ]
