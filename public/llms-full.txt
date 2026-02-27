@@ -182,7 +182,7 @@ Comprehensive video library covering:
 - Webhook support for real-time events
 - OAuth 2.0 for secure authentication
 - Rate limiting and security best practices
-- Comprehensive API documentation
+- Comprehensive API documentation: https://docs.bookedin.ai/
 
 ### Security & Compliance
 - SOC 2 Type II compliant infrastructure
