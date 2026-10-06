@@ -15,17 +15,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BookedIn - Convert leads into meetings for your clients",
-  description: "BookedIn automatically reaches out and nurtures leads via Phone, SMS, Whatsapp, Email, and Social Media DMs and turns them into potential customers - under your brand.",
+  title: "Converti - Convert leads into meetings for your clients",
+  description: "Converti automatically reaches out and nurtures leads via Phone, SMS, Whatsapp, Email, and Social Media DMs and turns them into potential customers - under your brand.",
   icons: {
     icon: [
       {
-        url: "/favicon.ico?v=1",
+        url: "/favicon.ico?v=2",
         sizes: "any",
       },
     ],
-    shortcut: "/favicon.ico?v=1",
-    apple: "/favicon.ico?v=1",
+    shortcut: "/favicon.ico?v=2",
+    apple: "/favicon.ico?v=2",
   },
 };
 
@@ -38,9 +38,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="g5D5kq-GtDMIdG8HaGV3Pl7KVf5VYrOksRIsw2Hw-YE" />
-        <link rel="icon" href="/favicon.ico?v=1" sizes="any" />
-        <link rel="shortcut icon" href="/favicon.ico?v=1" />
-        <link rel="apple-touch-icon" href="/favicon.ico?v=1" />
+        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
+        <link rel="apple-touch-icon" href="/favicon.ico?v=2" />
         <meta name="theme-color" content="#305AE3" />
 
         {/* Wistia Player - Load FIRST for hero video priority */}

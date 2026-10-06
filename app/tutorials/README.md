@@ -42,7 +42,7 @@ const videos = [
 const videos = [
   {
     id: 'abc123xyz',
-    title: 'Getting Started with BookedIn.ai',
+    title: 'Getting Started with Converti',
     description: 'Learn the basics in 10 minutes',
     thumbnail: 'https://img.youtube.com/vi/abc123xyz/maxresdefault.jpg',
   },

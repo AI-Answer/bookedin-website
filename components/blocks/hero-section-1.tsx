@@ -121,7 +121,7 @@ export function HeroSection() {
                                                 <iframe
                                                     src="https://app.supademo.com/embed/cmit6la4z3275l821gamks9al?embed_v=2&utm_source=embed"
                                                     loading="lazy"
-                                                    title="Bookedin ai product walkthrough"
+                                                    title="Converti AI product walkthrough"
                                                     allow="clipboard-write"
                                                     style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
                                                 />
@@ -280,8 +280,8 @@ const HeroHeader = () => {
 const Logo = ({ className }: { className?: string }) => {
     return (
         <img
-            src="/bookedin.svg"
-            alt="BookedIn"
+            src="/converti.svg"
+            alt="Converti"
             className={cn('h-8 w-auto', className)}
         />
     )

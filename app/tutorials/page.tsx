@@ -64,7 +64,7 @@ export default function TutorialsPage() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-2">
-              <img src="/bookedin.svg" alt="BookedIn" className="h-8 w-auto" />
+              <img src="/converti.svg" alt="Converti" className="h-8 w-auto" />
             </Link>
             <Button asChild variant="outline" size="sm">
               <Link href="/">
@@ -84,7 +84,7 @@ export default function TutorialsPage() {
             Video Tutorials & Resources
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
-            Learn BookedIn.ai and AI business automation with our comprehensive video guides
+            Learn Converti and AI business automation with our comprehensive video guides
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild variant="outline" size="lg">
@@ -95,7 +95,7 @@ export default function TutorialsPage() {
                 className="inline-flex items-center"
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
-                BookedIn.ai Channel
+                Converti Channel
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
@@ -284,9 +284,9 @@ export default function TutorialsPage() {
         <div className="container mx-auto px-6 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-2">
-              <img src="/bookedin.svg" alt="BookedIn" className="h-6 w-auto" />
+              <img src="/converti.svg" alt="Converti" className="h-6 w-auto" />
               <span className="text-sm text-muted-foreground">
-                © 2025 BookedIn.ai. All rights reserved.
+                © 2025 Converti. All rights reserved.
               </span>
             </div>
             <div className="flex gap-6">

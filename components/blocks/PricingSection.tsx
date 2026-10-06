@@ -70,7 +70,7 @@ const PricingSection: React.FC = () => {
         <Pricing
           plans={pricingPlans}
           title="Choose Your Plan"
-          description="Get started with BookedIn.ai and transform your lead conversion process"
+          description="Get started with Converti and transform your lead conversion process"
         />
 
         {/* Done For You Section */}

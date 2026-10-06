@@ -15,7 +15,7 @@ const BeforeAfterSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why use BookedIn.ai?
+            Why use Converti?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Stop wasting time on complex integrations and start focusing on what matters most - growing your business.
@@ -66,11 +66,11 @@ const BeforeAfterSection: React.FC = () => {
             <div className="mb-4">
               <img
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/4WBCThgieRy9bHVip9nI/media/684b3a0f07bcd3fcb45b89b2.gif"
-                alt="Clean, simple BookedIn interface"
+                alt="Clean, simple Converti interface"
                 className="w-full h-auto rounded-lg object-contain"
               />
             </div>
-            <h3 className="text-lg font-bold text-blue-600 mb-3">THE BOOKEDIN WAY</h3>
+            <h3 className="text-lg font-bold text-blue-600 mb-3">THE CONVERTI WAY</h3>
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="text-blue-500 mr-2 text-sm">📅</span>

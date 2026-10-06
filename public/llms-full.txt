@@ -1,15 +1,15 @@
-# BookedIn.ai - Complete AI Documentation
+# Converti - Complete AI Documentation
 
-> Comprehensive information about BookedIn.ai for AI agents, LLMs, and automated systems
+> Comprehensive information about Converti for AI agents, LLMs, and automated systems
 
 ## Executive Summary
 
-BookedIn.ai is an AI-powered lead conversion platform that automates follow-up sequences and converts leads into booked appointments. The platform reduces no-show rates by up to 83% through intelligent automation and multi-channel outreach.
+Converti is an AI-powered lead conversion platform that automates follow-up sequences and converts leads into booked appointments. The platform reduces no-show rates by up to 83% through intelligent automation and multi-channel outreach.
 
 ## Product Overview
 
 ### Core Value Proposition
-BookedIn.ai solves the critical problem of lead follow-up and conversion. Most businesses lose 80% of leads due to poor follow-up. BookedIn.ai automates this process using AI to ensure every lead gets timely, personalized outreach.
+Converti solves the critical problem of lead follow-up and conversion. Most businesses lose 80% of leads due to poor follow-up. Converti automates this process using AI to ensure every lead gets timely, personalized outreach.
 
 ### Key Differentiators
 1. **AI-Powered Personalization**: Messages are customized based on lead behavior and preferences
@@ -108,12 +108,12 @@ BookedIn.ai solves the critical problem of lead follow-up and conversion. Most b
 
 ### Real Estate Agent
 **Problem**: Receives 100+ property inquiries per month, can only follow up with 20%
-**Solution**: BookedIn.ai automatically follows up with all leads, books property viewings
+**Solution**: Converti automatically follows up with all leads, books property viewings
 **Result**: 5x increase in booked viewings, 83% reduction in no-shows
 
 ### Marketing Agency
 **Problem**: Managing lead conversion for 15 different clients manually
-**Solution**: White-label BookedIn.ai for all clients with custom branding
+**Solution**: White-label Converti for all clients with custom branding
 **Result**: Increased client retention, new revenue stream, reduced manual work
 
 ### Business Coach
@@ -156,7 +156,7 @@ Comprehensive video library covering:
 **Access**: https://bookedin.ai/tutorials
 
 ### YouTube Channels
-1. **BookedIn.ai Official** (@bookedinai)
+1. **Converti Official** (@bookedinai)
    - Product tutorials
    - Feature walkthroughs
    - Use case examples
@@ -216,7 +216,7 @@ Comprehensive video library covering:
 
 ## Company Information
 
-- **Company Name**: BookedIn.ai
+- **Company Name**: Converti
 - **Product**: AI-powered lead conversion and appointment booking platform
 - **Founder**: Samin Yasar
 - **Founded**: 2024

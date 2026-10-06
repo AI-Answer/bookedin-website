@@ -26,10 +26,10 @@ export default function PrivacyPolicy() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Introduction</h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              Welcome to BookedIn.ai ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our AI-powered sales automation platform.
+              Welcome to Converti ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our AI-powered sales automation platform.
             </p>
             <p className="text-slate-600 leading-relaxed">
-              By using BookedIn.ai, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services.
+              By using Converti, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services.
             </p>
           </section>
 
@@ -181,7 +181,7 @@ export default function PrivacyPolicy() {
               If you have questions or concerns about this Privacy Policy or our data practices, please contact us:
             </p>
             <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-              <p className="text-slate-900 font-semibold mb-2">BookedIn.ai</p>
+              <p className="text-slate-900 font-semibold mb-2">Converti</p>
               <p className="text-slate-600">Email: <a href="mailto:privacy@bookedin.ai" className="text-blue-600 hover:text-blue-700">privacy@bookedin.ai</a></p>
               <p className="text-slate-600">Support: <a href="mailto:support@bookedin.ai" className="text-blue-600 hover:text-blue-700">support@bookedin.ai</a></p>
             </div>
@@ -193,7 +193,7 @@ export default function PrivacyPolicy() {
       <footer className="border-t border-slate-200 mt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <p className="text-center text-slate-500 text-sm">
-            © 2024 BookedIn.ai. All rights reserved.
+            © 2024 Converti. All rights reserved.
           </p>
         </div>
       </footer>

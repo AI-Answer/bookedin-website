@@ -4,8 +4,8 @@ import { NextResponse } from 'next/server'
 const CHANNELS = {
   bookedin: {
     id: 'UCwUgatPkBj-CROEB_MJAh5A',
-    name: 'BookedIn.ai Tutorials',
-    category: 'BookedIn.ai'
+    name: 'Converti Tutorials',
+    category: 'Converti'
   },
   samin: {
     id: 'UCzGcYErpBX4ldvv0l7MWLfw',

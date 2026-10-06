@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="268" height="64" viewBox="0 0 268 64" role="img" aria-labelledby="title">
+  <title id="title">Converti</title>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#305AE3"/>
+  <path d="M43 22a15 15 0 1 0 0 20" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <text x="74" y="48" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" letter-spacing="-1.5">Converti</text>
+</svg>
