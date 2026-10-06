@@ -29,7 +29,7 @@ export function TestimonialCarouselDemo() {
           Don't Take Our Word For It
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          See how BookedIn has transformed businesses and helped them convert more leads into meetings
+          See how Converti has transformed businesses and helped them convert more leads into meetings
         </p>
       </div>
       <TestimonialCarousel

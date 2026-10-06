@@ -85,7 +85,7 @@ const VideoTestimonialsSection: React.FC = () => {
             Real Results from Real Clients
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            See what our clients are saying about BookedIn.ai and the results they're achieving
+            See what our clients are saying about Converti and the results they're achieving
           </p>
         </div>
         

@@ -16,7 +16,7 @@ const WhoIsThisForSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Who is BookedIn AI for?
+            Who is Converti AI for?
           </h2>
         </div>
         
@@ -63,7 +63,7 @@ const WhoIsThisForSection: React.FC = () => {
 
               <div className="mb-6">
                 <TextGradientScroll
-                  text="BookedIn is the done-for-you AI system you sell as your own - a complete lead conversion platform that calls, texts, and messages leads automatically until they book appointments. No coding. No complexity. Just pick a template, slap your logo on it, and charge $2K-$5K/month per client."
+                  text="Converti is the done-for-you AI system you sell as your own - a complete lead conversion platform that calls, texts, and messages leads automatically until they book appointments. No coding. No complexity. Just pick a template, slap your logo on it, and charge $2K-$5K/month per client."
                   className="text-gray-700 text-base leading-relaxed"
                   type="word"
                   textOpacity="soft"
@@ -100,7 +100,7 @@ const WhoIsThisForSection: React.FC = () => {
 
               <div className="mb-6">
                 <TextGradientScroll
-                  text="Bookedin makes it easy for you to get more leads to actually show up in person or virtually."
+                  text="Converti makes it easy for you to get more leads to actually show up in person or virtually."
                   className="text-gray-700 text-base leading-relaxed"
                   type="word"
                   textOpacity="soft"

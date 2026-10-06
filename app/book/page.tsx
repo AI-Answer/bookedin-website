@@ -61,16 +61,16 @@ export default function BookingPage() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg mb-6">
             <div className="w-6 h-6 bg-white rounded flex items-center justify-center">
-              <span className="text-black font-bold text-sm">B</span>
+              <span className="text-black font-bold text-sm">C</span>
             </div>
-            <span className="font-semibold">BookedIn</span>
+            <span className="font-semibold">Converti</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
             Let's find where you're losing conversions & customers.
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-8">
-            Schedule your BookedIn Visibility demo.
+            Schedule your Converti Visibility demo.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export default function BookingPage() {
               }}
               scrolling="no"
               id="5tBRfXC6BBxlQyIdDzPF_1760303128422"
-              title="BookedIn Calendar Booking"
+              title="Converti Calendar Booking"
             />
           </div>
         </div>

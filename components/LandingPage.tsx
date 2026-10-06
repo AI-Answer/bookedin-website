@@ -6,7 +6,7 @@ export default function LandingPage() {
       <iframe
         src="/landing-content.html"
         className="w-full h-full border-0"
-        title="BookedIn Landing Page"
+        title="Converti Landing Page"
       />
     </div>
   );

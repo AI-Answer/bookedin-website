@@ -1,10 +1,10 @@
-# BookedIn.ai - AI Lead Conversion Platform
+# Converti - AI Lead Conversion Platform
 
 > AI-powered lead conversion system that automates follow-ups and converts more leads into booked appointments
 
-## What is BookedIn.ai?
+## What is Converti?
 
-BookedIn.ai is a lead conversion SaaS platform that helps businesses automatically follow up with leads and convert them into booked appointments. The platform uses AI to personalize outreach, automate follow-up sequences, and dramatically reduce no-show rates.
+Converti is a lead conversion SaaS platform that helps businesses automatically follow up with leads and convert them into booked appointments. The platform uses AI to personalize outreach, automate follow-up sequences, and dramatically reduce no-show rates.
 
 ## Key Features
 
@@ -48,7 +48,7 @@ BookedIn.ai is a lead conversion SaaS platform that helps businesses automatical
 ## Resources
 
 - **Video Tutorials**: https://bookedin.ai/tutorials
-- **YouTube Channel (BookedIn.ai)**: https://www.youtube.com/@bookedinai
+- **YouTube Channel (Converti)**: https://www.youtube.com/channel/UCwUgatPkBj-CROEB_MJAh5A
 - **YouTube Channel (AI Automation)**: https://www.youtube.com/@SaminYasar_
 - **Book a Demo**: https://bookedin.ai/book
 - **Get Started**: https://dashboard.bookedin.ai/register

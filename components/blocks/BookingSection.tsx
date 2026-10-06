@@ -20,7 +20,7 @@ const BookingSection: React.FC = () => {
               Ready to Transform Your Lead Conversion?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Book a personalized demo and see exactly how BookedIn.ai can automate your follow-up process and convert more leads into meetings
+              Book a personalized demo and see exactly how Converti can automate your follow-up process and convert more leads into meetings
             </p>
           </div>
 
@@ -32,7 +32,7 @@ const BookingSection: React.FC = () => {
                   Schedule Your Free Demo
                 </h3>
                 <p className="text-gray-600">
-                  Choose a time that works for you and let's show you how BookedIn.ai can work for your business
+                  Choose a time that works for you and let's show you how Converti can work for your business
                 </p>
               </div>
               
@@ -42,7 +42,7 @@ const BookingSection: React.FC = () => {
                   <iframe
                     src="https://app.converti.ai/widget/booking/U5bzTPMI2Fr08d0FXePj"
                     className="w-full border-none h-[700px] md:h-[800px] lg:h-[850px] min-h-[700px]"
-                    title="Book a Demo with BookedIn.ai"
+                    title="Book a Demo with Converti"
                     loading="lazy"
                     style={{ overflow: 'auto' }}
                   />
@@ -60,7 +60,7 @@ const BookingSection: React.FC = () => {
                 </svg>
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">30-Minute Demo</h4>
-              <p className="text-gray-600">See BookedIn.ai in action with a personalized walkthrough</p>
+              <p className="text-gray-600">See Converti in action with a personalized walkthrough</p>
             </div>
             
             <div className="text-center">

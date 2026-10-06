@@ -50,11 +50,11 @@ const { chromium } = require('playwright');
     }
     
     // Check if logo is present
-    const logoElement = await page.$('img[alt="BookedIn"]');
+    const logoElement = await page.$('img[alt="Converti"]');
     if (logoElement) {
-      console.log('✅ BookedIn logo found');
+      console.log('✅ Converti logo found');
     } else {
-      console.log('❌ BookedIn logo not found');
+      console.log('❌ Converti logo not found');
     }
     
     // Check if particles are present
