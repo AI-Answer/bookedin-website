@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Play, ArrowLeft, ExternalLink } from 'lucide-react'
 
-// YouTube Channel ID for @bookedinai
+// YouTube Channel ID for Converti
 const YOUTUBE_CHANNEL_ID = 'UCwUgatPkBj-CROEB_MJAh5A'
 
 interface Video {
@@ -89,7 +89,7 @@ export default function TutorialsPage() {
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild variant="outline" size="lg">
               <a
-                href="https://www.youtube.com/@bookedinai"
+                href="https://www.youtube.com/channel/UCwUgatPkBj-CROEB_MJAh5A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center"
@@ -169,7 +169,7 @@ export default function TutorialsPage() {
             <p className="text-muted-foreground mb-6">{error}</p>
             <Button asChild>
               <a
-                href="https://www.youtube.com/@bookedinai"
+                href="https://www.youtube.com/channel/UCwUgatPkBj-CROEB_MJAh5A"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -245,7 +245,7 @@ export default function TutorialsPage() {
             </p>
             <Button asChild>
               <a
-                href="https://www.youtube.com/@bookedinai"
+                href="https://www.youtube.com/channel/UCwUgatPkBj-CROEB_MJAh5A"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -297,7 +297,7 @@ export default function TutorialsPage() {
                 Book Demo
               </Link>
               <a
-                href="https://www.youtube.com/@bookedinai"
+                href="https://www.youtube.com/channel/UCwUgatPkBj-CROEB_MJAh5A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-foreground"

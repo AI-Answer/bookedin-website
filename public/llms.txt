@@ -48,7 +48,7 @@ Converti is a lead conversion SaaS platform that helps businesses automatically 
 ## Resources
 
 - **Video Tutorials**: https://bookedin.ai/tutorials
-- **YouTube Channel (Converti)**: https://www.youtube.com/@bookedinai
+- **YouTube Channel (Converti)**: https://www.youtube.com/channel/UCwUgatPkBj-CROEB_MJAh5A
 - **YouTube Channel (AI Automation)**: https://www.youtube.com/@SaminYasar_
 - **Book a Demo**: https://bookedin.ai/book
 - **Get Started**: https://dashboard.bookedin.ai/register

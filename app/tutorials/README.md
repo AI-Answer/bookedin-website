@@ -13,7 +13,7 @@ https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 ### Step 2: Add Video to the List
 
-Open `bookedin-website/app/tutorials/page.tsx` and find the `videos` array (around line 10).
+Open `converti-website/app/tutorials/page.tsx` and find the `videos` array (around line 10).
 
 Add your video like this:
 
@@ -71,5 +71,5 @@ const videos = [
 ## Need Help?
 
 If you need to customize the page layout or styling, the main file is:
-`bookedin-website/app/tutorials/page.tsx`
+`converti-website/app/tutorials/page.tsx`
 

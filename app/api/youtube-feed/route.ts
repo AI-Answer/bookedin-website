@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 
 // YouTube Channel IDs
 const CHANNELS = {
-  bookedin: {
+  converti: {
     id: 'UCwUgatPkBj-CROEB_MJAh5A',
     name: 'Converti Tutorials',
     category: 'Converti'
@@ -17,20 +17,20 @@ const CHANNELS = {
 export async function GET() {
   try {
     // Fetch from both channels
-    const [bookedinVideos, saminVideos] = await Promise.all([
-      fetchChannelVideos(CHANNELS.bookedin),
+    const [convertiVideos, saminVideos] = await Promise.all([
+      fetchChannelVideos(CHANNELS.converti),
       fetchChannelVideos(CHANNELS.samin)
     ])
 
     // Combine and sort by published date (newest first)
-    const allVideos = [...bookedinVideos, ...saminVideos].sort((a, b) => {
+    const allVideos = [...convertiVideos, ...saminVideos].sort((a, b) => {
       return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     })
 
     return NextResponse.json({
       videos: allVideos,
       categories: {
-        bookedin: bookedinVideos,
+        converti: convertiVideos,
         automation: saminVideos
       }
     })
@@ -43,7 +43,7 @@ export async function GET() {
   }
 }
 
-async function fetchChannelVideos(channel: typeof CHANNELS.bookedin) {
+async function fetchChannelVideos(channel: typeof CHANNELS.converti) {
   try {
     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channel.id}`
     const response = await fetch(rssUrl, {
